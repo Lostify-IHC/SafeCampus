@@ -81,3 +81,49 @@ body {
 .btn-acceder:hover, .btn-empezar:hover {
   background-color: #3a5bd9;
 }
+/* Sección Inicio */
+.hero {
+  padding: 180px 0 100px;
+  background-color: #E8F0FE;
+}
+
+.hero .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-content {
+  flex: 1;
+  min-width: 50%;
+}
+
+.hero-content h1 {
+  font-size: 64px;
+  margin-bottom: 20px;
+  color: #083AA9;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.hero-content p {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #4D77FF;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+
+.hero-image {
+  flex: 1;
+  min-width: 50%;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+}
