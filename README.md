@@ -1,6 +1,6 @@
 # SafeCampus - Plataforma de Objetos Perdidos Universitarios
 
-![Logo de SafeCampus](assets/images/logo.JPG)
+<img src="public/assets/images/logo.JPG" alt="logo-SafeCampus" width="400">
 
 ## Descripción del Proyecto
 SafeCampus es una plataforma digital que ayuda a estudiantes universitarios a reportar y recuperar objetos perdidos dentro del campus, mediante un sistema seguro y eficiente.
