@@ -1,0 +1,380 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Parametros de todo el texto del diseño*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  min-height: 100vh;
+  display: flex;
+}
+/*Parametros del diseño del contenido de la seccion*/
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  background: white;
+}
+/*Parametros de la barra lateral azul*/
+.sidebar {
+  height: 100%;
+  width: 290px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #083AA9;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  background: white;
+  color: #083AA9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo img {
+  width: 92%;
+  border-radius: 15px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.nav-item {
+  display: block;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  height: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+.nav-item:hover {
+  color: #083AA9;
+  background-color: #fff;
+}
+.nav-item.active {
+  background-color: #fff;
+  color: #083AA9;
+}
+/*Espacio del contenido*/
+.Main_Content{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    padding: 20px;
+}
+.Encabezado{
+    display: flex;
+    align-items: center;
+    margin: 30px;
+    gap: 20px;
+}
+/*Titulo de la seccion*/
+.Titulo{
+    margin-left: 20px;
+    color: #083AA9;
+}
+.busqueda {
+  display: flex;
+  align-items: center;
+  margin-left: 40px;
+}
+.busqueda button {
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+  border: 2px solid #8090cd;
+  border-radius: 0 8px 8px 0;
+  border-left: none;
+  height: 42px;
+  background-color: #fff;
+  width: 50px;
+}
+.busqueda input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  color: #04339b;
+  width: 230px;
+  border: 2px solid #8090cd;
+  border-radius: 8px 0 0 8px;
+  outline: none;
+  border-right: none;
+}
+.busqueda ::placeholder{
+  color: #04339b;
+}
+.busqueda button.Filtro{
+  border: none;
+  font-size: 27px;
+}
+.menu-filtros {
+  display: none;
+  position: absolute;
+  margin-left: 25px;
+  top: 160px;
+  left: 350px;
+  z-index: 100;
+  background-color: #ffffff;
+  border: 2px solid #8090cd;
+  padding: 10px 15px;
+  border-radius: 8px;
+  width: 280px;
+  flex-direction: column;
+  gap: 10px;
+}
+.fila-filtro{
+    color: #04339b;
+    align-items: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+.menu-filtros input[type="text"] {
+    flex-grow: 10;                 
+    padding: 6px 10px;
+    border: 1px solid #8090cd;
+    border-radius: 20px;
+    border-width: 2px;
+    font-size: 14px;
+    color: #04339b;
+    box-sizing: border-box;
+}.menu-filtros input.a{
+    width: 120px;
+}
+.Circulo {
+  all:unset;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  position: absolute;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #8090cd;
+  cursor: pointer;
+  padding: 0;
+  margin-left:70px;
+  margin-top: 124px;
+}
+.Circulo.activa {
+    background-color: #083AA9;
+}
+/*Separacion de pares de publicaciones*/
+.Row_1{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+}
+.estrella {
+    font-size: 30px;
+    color: transparent; 
+    -webkit-text-stroke: 2px #083AA9;
+    background: none;
+    border: none;
+    cursor: pointer;
+    margin-left:270px;
+    margin-top: -5px;
+}
+.estrella.activa {
+    color: #083AA9; 
+}
+/*Primer Post*/
+.Post_1{
+    background-color: #e7f1fd;
+    margin-left: 10px;
+    border-color: #8090cd;
+    top: 160px;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    height: 200px;
+    width: 420px;
+}
+.Post_1 p{
+    color:#083AA9;
+    margin: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+/*Segundo Post*/
+.Post_2{
+    background-color: #e7f1fd;
+    border-color: #8090cd;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    height: 200px;
+    width: 420px;
+}
+.Post_2 p{
+    color:#083AA9;
+    margin: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+
+/*Separacion de pares de publicaciones*/
+.Row_2{
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-left: 50px;
+}
+/*Tercer Post*/
+.Post_3{
+    background-color: #e7f1fd;
+    margin-left: 10px;
+    border-color: #8090cd;
+    top: 600px;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    height: 200px;
+    width: 420px;
+}
+.Post_3 p{
+    color:#083AA9;
+    margin: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+/*Cuarto Post*/
+.Post_4{
+    background-color: #e7f1fd;
+    border-color: #8090cd;
+    border-radius: 15px;
+    border-width: 2px;
+    border-style: solid;
+    height: 200px;
+    width: 420px;
+}
+.Post_4 p{
+    color:#083AA9;
+    margin: 10px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+/*Carectiriscas compartidas de los Posts*/
+.Caracteristica{
+    font-weight: bold;
+}
+.Ubicacion{
+    position: absolute;
+    background-color: #fff;
+    border-color: #04339b;
+    border-style: solid;
+    border-width: 1px;
+    width: 180px;
+    height:35px;
+    padding-top: 7px;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    color: black;
+    margin-left: 5px;
+}
+.Detalles_Publicacion{
+    position: absolute;
+    background-color: #083AA9;
+    border-color:#4d72ea;
+    border-style: solid;
+    border-width: 1px;
+    width: 100px;
+    height:35px;
+    margin-left:305px;
+    border-radius: 5px;
+    padding-top: 7px;
+}
+.Detalles_Publicacion a{
+    color:#fff;
+    padding: 15px;
+    text-decoration: none;
+}
+.IMG{
+    position:absolute;
+    margin-left: 300px;
+    margin-top: 7px;
+    border-style: solid;
+    border-color:#39568a;
+    border-radius: 3px;
+    border-width: 2px;
+}
+/*Diseño responsive*/
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    height: auto;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .Main_Content{
+    height: auto;
+    position: flex;
+  }
+  .Mis_Publicaciones{
+    height: auto;
+    position: flex;
+  }
+  .Boton_Publi{
+    position: relative;
+    height: auto;
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+  .Post_1{
+    margin-left: 0px;
+    width: 528px;
+  }
+  .Post_2{
+    flex-wrap: wrap;
+    margin-left: 0px;
+    width: 528px;
+  }
+  .Post_3{
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 528px;
+  }
+   .Post_4{
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-left: 0px;
+    width: 528px;
+  }
+  .IMG{
+    margin-left: 415px;
+    margin-top: 7px;
+    width: 15%;
+  }
+  .Detalles_Publicacion{
+  margin-left: 410px;
+  }
+  .estrella {
+    margin-left:380px;
+  }
+  .menu-filtros {
+  display: none;
+  flex-wrap: wrap;
+  margin-top: 614px;
+  margin-left: 40px;
+  gap: 10px;
+  }
+}
