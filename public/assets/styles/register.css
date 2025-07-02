@@ -1,0 +1,185 @@
+body {
+    background-color: #083AA9;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.register-container {
+    width: 100%;
+    max-width: 1200px;
+    position: relative;
+}
+
+.back-button {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: opacity 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-family: 'Montserrat', Bold;
+}
+
+.back-button:hover {
+    opacity: 0.8;
+    background: rgba(255,255,255,0.3);
+}
+
+.register-box {
+    display: flex;
+    background-color: #E8F0FE;
+    border-radius: 20px;
+    overflow: hidden;
+    max-height: 90vh;
+}
+
+.register-form {
+    flex: 1;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.register-form h2 {
+    color: #083AA9;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: center;
+    font-family: 'Montserrat', Bold;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    color: #083AA9;
+    font-weight: 500;
+    font-size: 20px;
+    font-family: 'Montserrat', Bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #083AA9;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border-color: #083AA9;
+    border-radius: 10px;
+    font-size: 24px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s;
+}
+
+.register-btn:hover {
+    background-color: #2980b9;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.login-link p {
+    color: #083AA9;
+    margin-bottom: 8px;
+    font-size: 20px;
+    font-family: 'Montserrat', Bold;
+}
+
+.login-btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #FFFFFF;
+    color: #1A1A1A;
+    border-color: #083AA9;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    transition: background-color 0.3s;
+    font-family: 'Montserrat', Bold;
+}
+
+.login-btn:hover {
+    background-color: #2980b9;
+}
+
+.register-image {
+    flex: 1;
+    min-height: 500px;
+}
+
+.image-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #e0e0e0;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .register-box {
+        flex-direction: column;
+        max-height: none;
+    }
+    
+    .register-form {
+        padding: 30px;
+    }
+    
+    .register-image {
+        display: none;
+    }
+    
+    .back-button {
+        top: -35px;
+    }
+}
+
+@media (max-width: 576px) {
+    .register-form {
+        padding: 25px;
+    }
+    
+    .back-button {
+        font-size: 14px;
+        top: -30px;
+    }
+    
+    .logo h1 {
+        font-size: 22px;
+    }
+    
+    .register-form h2 {
+        font-size: 20px;
+    }
+}
