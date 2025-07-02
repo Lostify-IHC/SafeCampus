@@ -22,7 +22,7 @@ loginButton.addEventListener("click", (event) => {
     return;
   }
 
-  window.location.href = "#";
+  window.location.href = "Posts.html";
 });
 
 function validateEducationalEmail(email) {
