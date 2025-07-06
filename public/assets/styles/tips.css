@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Parametros de todo el texto del diseño*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.contenido-tips {
+    padding: 4vw;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    min-width: 0;
+    margin-left: 290px;
+    min-height: 100vh;
+}
+
+.btn-volver-tips {
+    font-size: 1.2em;
+    margin-bottom: 2vw;
+    cursor: pointer;
+    color: #1ea2ee;
+    font-weight: bold;
+}
+
+.tips-item {
+    margin-bottom: 1.5vw;
+}
+
+strong {
+    color: #083baf;
+}
+
+.caja-flecha-con-texto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2vw;
+    align-self: flex-start;
+}
+
+.caja-flecha-atras {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #083baf;
+    border-radius: 10px;
+    background: #fff;
+    color: #083baf;
+    font-size: 1.6em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(8,59,175,0.08);
+    text-decoration: none;
+}
+
+.caja-flecha-atras:hover {
+    background: #083baf;
+    color: #fff;
+}
+
+.texto-tips {
+    font-size: 2em;
+    color: #083baf;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-top: -8px; /* Ajusta según lo que necesites */
+}
+.titulo-otros-interno {
+  color: #083baf;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.sidebar {
+  height: 100vh;
+  width: 290px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #083AA9;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.logo {
+  background: white;
+  color: #083AA9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo img {
+  width: 92%;
+  border-radius: 15px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.nav-item {
+  display: block;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  height: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+.nav-item:hover {
+  color: #083AA9;
+  background-color: #fff;
+}
+.nav-item.active {
+  background-color: #fff;
+  color: #083AA9;
+}
