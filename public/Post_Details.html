@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Safe Campus - Detalle Publicación</title>
+    <link rel="stylesheet" href="assets/styles/Post_Details.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <div class="logo">
+                <img src="assets/images/logo.JPG" width="230" height="72" alt="Safe Campus Logo">    
+            </div>
+            <div class="nav-item" onclick="switchSection('mis-publicaciones')">Mis publicaciones</div>
+            <div class="nav-item active" onclick="switchSection('publicaciones')">Publicaciones</div>
+            <div class="nav-item" onclick="switchSection('otros')">Otros</div>
+            <div class="nav-item" onclick="switchSection('perfil')">Mi Perfil</div>
+            <div class="nav-item" onclick="switchSection('notificaciones')">Notificaciones</div>
+            <div class="nav-item" onclick="logout()">Cerrar Sesión</div>
+        </div>
+
+        <div class="main-content">
+            <div class="breadcrumb" id="current-section">Publicaciones</div>
+            <div class="header">
+               <button class="back-btn" onclick="goBack()">←</button>
+               <div class="header-content">
+                    <h1 id="page-title">Detalle del Objeto</h1>
+                </div>
+            </div>
+
+            <div class="content fade-in">
+                <div class="info-section">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <div class="info-label">Sede:</div>
+                            <div class="info-value" id="sede"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Área:</div>
+                            <div class="info-value" id="area"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">Día encontrado:</div>
+                            <div class="info-value" id="fecha"></div>
+                        </div>
+                        <div class="info-item">
+                            <div class="info-label">De:</div>
+                            <div class="info-value" id="usuario"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="info-section description-section">
+                    <h3>Descripción objeto:</h3>
+                    <div class="description-text" id="descripcion">
+                        <!-- Descripción se cargará dinámicamente -->
+                    </div>
+
+                    <h3>Descripción de hallazgo:</h3>
+                    <div class="description-text" id="hallazgo">
+                        <!-- Hallazgo se cargará dinámicamente -->
+                    </div>
+
+                    <div class="report-container">
+                        <div class="status-actions">
+                            <button class="status-btn" id="status-btn">
+                            <!-- Status se cargará dinámicamente -->
+                            </button>
+                        </div>
+
+                        <a href="reportar_publicacion.html" class="report-action">
+                            <button class="btn-reportar" id="btn-reportar">Reportar</button>
+                        </a>
+                    </div>
+
+                    <div class="image-placeholder" id="imagen-container">
+                        <img id="objeto-imagen" src="" alt="Imagen del objeto" style="display: none; max-width: 100%; height: auto; border-radius: 8px;">
+                        <span id="placeholder-text">Imagen</span>
+                    </div>
+
+                    <div class="actions-container">
+                        <div>
+                            <button class="action-btn btn-contact" id="contact-btn" onclick="contactOwner()"><a href="publicaciones_formulario.html">Contactar</a></button>
+                        </div>
+                        <div>
+                            <button class="action-btn btn-favorite" id="favorite-btn" onclick="toggleFavorite()">
+                                <span id="favorite-text">Agregar a Favoritos</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/scripts/Post_Details.js"></script>
+</body>
+</html>
