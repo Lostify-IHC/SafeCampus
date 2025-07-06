@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Parametros de todo el texto del diseño*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.contenido-editar-perfil {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra el formulario, pero no afecta la flecha */
+  padding: 40px;
+  flex-grow: 1;
+  background-color: #f9f9f9;
+  margin-left: 290px;
+  min-height: 100vh;
+}
+
+.btn-volver-editar-perfil {
+  font-size: 1.2em;
+  margin-bottom: 2vw;
+  cursor: pointer;
+  color: #1ea2ee;
+  font-weight: bold;
+  align-self: flex-start;
+}
+
+.formulario-editar-perfil {
+  background: #ffffff;
+  padding: 1vw 2vw;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+  width: 100%;
+  max-width: 600px;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.formulario-editar-perfil label {
+  margin: 1vw 0 0.3vw;
+}
+
+.formulario-editar-perfil input[type="text"],
+.formulario-editar-perfil input[type="email"],
+.formulario-editar-perfil select {
+  margin-bottom: 0.5vw;
+  padding: 0.8vw;
+  border: 2px solid #083baf;
+  border-radius: 8px;
+  font-size: 1.1em;
+  box-sizing: border-box;
+}
+
+.btn-guardar-editar-perfil {
+  margin-top: 2vw;
+  background-color: #083baf;
+  color: white;
+  padding: 1.2vw 3vw;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1em;
+  cursor: pointer;
+  align-self: flex-end;
+  min-width: 100px;
+}
+
+.btn-guardar-editar-perfil:hover {
+  background-color: #062a7e;
+}
+
+.caja-flecha-atras {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 2px solid #083baf;
+  border-radius: 10px;
+  background: #fff;
+  color: #083baf;
+  font-size: 1.6em;
+  font-weight: bold;
+  cursor: pointer;
+  margin-bottom: 2vw;
+  margin-top: 1vw;
+  transition: background 0.2s, color 0.2s;
+  box-shadow: 0 2px 8px rgba(8,59,175,0.08);
+  text-decoration: none;
+}
+
+.caja-flecha-atras:hover {
+  background: #083baf;
+  color: #fff;
+}
+
+.caja-flecha-con-texto {
+  display: flex;
+  align-items: center; /* Alinea verticalmente la flecha y el texto */
+  gap: 12px;
+  margin-bottom: 2vw;
+  align-self: flex-start;
+}
+
+.texto-editar-perfil {
+  font-size: 2em;
+  color: #083baf;
+  font-weight: bold;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  margin-top: -8px; 
+}
+.sidebar {
+  height: 100vh;
+  width: 290px;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #083AA9;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+}
+.logo {
+  background: white;
+  color: #083AA9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo img {
+  width: 92%;
+  border-radius: 15px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.nav-item {
+  display: block;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  height: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+.nav-item:hover {
+  color: #083AA9;
+  background-color: #fff;
+}
+.nav-item.active {
+  background-color: #fff;
+  color: #083AA9;
+}

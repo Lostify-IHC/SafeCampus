@@ -1,0 +1,174 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Parametros de todo el texto del diseño*/
+body {
+  font-family: 'Montserrat', sans-serif;
+  background: white;
+  height: 100vh;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+
+.contenido-informe-perdidas {
+    padding: 4vw;
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    min-width: 0;
+    margin-left: 290px;
+    min-height: 100vh;
+}
+
+.btn-volver-informe-perdidas {
+    font-size: 1.2em;
+    margin-bottom: 2vw;
+    cursor: pointer;
+    color: #1ea2ee;
+    font-weight: bold;
+}
+
+.titulo-informe-perdidas,
+.zonas-informe-perdidas,
+.horas-informe-perdidas {
+    color: #083baf;
+    margin-bottom: 10px;
+}
+
+.lista-horas-informe-perdidas {
+    color: #083baf;
+    font-weight: 500;
+}
+
+p {
+    margin: 5px 0;
+}
+
+
+.caja-flecha-con-texto {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 2vw;
+    align-self: flex-start;
+}
+
+.caja-flecha-atras {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border: 2px solid #083baf;
+    border-radius: 10px;
+    background: #fff;
+    color: #083baf;
+    font-size: 1.6em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    box-shadow: 0 2px 8px rgba(8,59,175,0.08);
+    text-decoration: none;
+}
+
+.caja-flecha-atras:hover {
+    background: #083baf;
+    color: #fff;
+}
+
+.texto-informe-perdidas {
+    font-size: 2em;
+    color: #083baf;
+    font-weight: bold;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    margin-top: -8px; /* Ajusta según lo que necesites */
+}
+.titulo-otros-interno {
+  color: #083baf;
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+.sidebar {
+  height: 100vh;
+  width: 290px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #083AA9;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.zona-reporte {
+  background-color: #fff;
+  border-left: 5px solid #083baf;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(8, 59, 175, 0.1);
+  color: #333;
+}
+
+.lista-horas-informe-perdidas {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 15px;
+}
+
+.lista-horas-informe-perdidas li {
+  background-color: #eaf1ff;
+  padding: 12px 16px;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  color: #083baf;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+
+.logo {
+  background: white;
+  color: #083AA9;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.logo img {
+  width: 92%;
+  border-radius: 15px;
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.nav-item {
+  display: block;
+  color: #fff;
+  padding: 20px;
+  text-decoration: none;
+  font-size: 20px;
+  text-align: center;
+  height: 70px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-left: 4px solid transparent;
+}
+.nav-item:hover {
+  color: #083AA9;
+  background-color: #fff;
+}
+.nav-item.active {
+  background-color: #fff;
+  color: #083AA9;
+}
