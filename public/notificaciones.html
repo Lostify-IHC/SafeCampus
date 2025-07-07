@@ -14,19 +14,19 @@
                     alt="Safe Campus Logo"
                 />
             </div>
-            <a href="Posts.html" class="nav-item active">
+            <a href="Posts.html" class="nav-item">
                 Mis publicaciones
             </a>
             <a href="Search.html" class="nav-item">
                 Publicaciones
             </a>
-            <a href="#" class="nav-item">
+            <a href="otros.html" class="nav-item">
                 Otros
             </a>
-            <a href="#" class="nav-item">
+            <a href="profile.html" class="nav-item">
                 Mi Perfil
             </a>
-            <a href="#" class="nav-item">
+            <a href="notificaciones.html" class="nav-item active">
                 Notificaciones
             </a>
             <a href="../index.html" class="nav-item">
@@ -35,14 +35,58 @@
         </div>
 
   <div class="contenido-notificaciones">
-    <h1 class="titulo-notificaciones">Notificaciones</h1>
+    <h1 class="titulo-notificaciones">
+      Notificaciones
+      <button class="btn-desactivar" onclick="desactivarNotificaciones()">
+        Desactivar Notificaciones
+      </button>
+    </h1>
     <ul class="lista-notificaciones">
-      <li><strong>Recuperado:</strong> Cartuchera perdida</li>
-      <li><strong>Éxito:</strong> Se envió correctamente mi publicación</li>
-      <li><strong>Publicado:</strong> Publicación se publicó correctamente</li>
-      <li><strong>Confirmado:</strong> Formulario llenado correctamente</li>
-      <li><strong>Nuevo registro:</strong> Alguien ha llenado el formulario</li>
+      <li class="notif-recuperado"><strong>Recuperado:</strong> Cartuchera perdida</li>
+      <li class="notif-exito"><strong>Éxito:</strong> Se envió correctamente mi publicación</li>
+      <li class="notif-publicado"><strong>Publicado:</strong> Publicación se publicó correctamente</li>
+      <li class="notif-confirmado"><strong>Confirmado:</strong> Formulario llenado correctamente</li>
+      <li class="notif-registro"><strong>Nuevo registro:</strong> Alguien ha llenado el formulario</li>
+      <li class="notif-similar"><strong>Objeto similar:</strong> Encontramos un objeto que podría coincidir con tu búsqueda</li>
+      <li class="notif-entregado"><strong>Entrega confirmada:</strong> Has entregado exitosamente un objeto perdido a su dueño</li>
     </ul>
   </div>
+
+  <script>
+    function desactivarNotificaciones() {
+      const confirmacion = confirm('¿Estás seguro de que quieres desactivar todas las notificaciones?');
+      
+      if (confirmacion) {
+        // Simular desactivación de notificaciones
+        const listaNotificaciones = document.querySelector('.lista-notificaciones');
+        const btnDesactivar = document.querySelector('.btn-desactivar');
+        
+        // Ocultar todas las notificaciones con animación
+        const notificaciones = document.querySelectorAll('.lista-notificaciones li');
+        notificaciones.forEach((notif, index) => {
+          setTimeout(() => {
+            notif.style.opacity = '0';
+            notif.style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+              notif.style.display = 'none';
+            }, 300);
+          }, index * 100);
+        });
+        
+        // Cambiar el botón
+        setTimeout(() => {
+          btnDesactivar.textContent = 'Notificaciones Desactivadas';
+          btnDesactivar.style.backgroundColor = '#95a5a6';
+          btnDesactivar.disabled = true;
+          btnDesactivar.style.cursor = 'not-allowed';
+        }, 1000);
+        
+        // Mostrar mensaje de confirmación
+        setTimeout(() => {
+          listaNotificaciones.innerHTML = '<li style="text-align: center; border-left: none; font-style: italic; color: #7f8c8d;">Las notificaciones han sido desactivadas</li>';
+        }, 1500);
+      }
+    }
+  </script>
 </body>
 </html>

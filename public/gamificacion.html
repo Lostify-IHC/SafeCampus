@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Gamificación</title>
+  <link rel="stylesheet" href="assets/styles/gamificacion.css">
+</head>
+<body>
+  <div class="sidebar">
+            <div class="logo">
+                <img
+                    src="assets/images/logo.JPG"
+                    alt="Safe Campus Logo"
+                />
+            </div>
+            <a href="Posts.html" class="nav-item">
+                Mis publicaciones
+            </a>
+            <a href="Search.html" class="nav-item">
+                Publicaciones
+            </a>
+            <a href="otros.html" class="nav-item active">
+                Otros
+            </a>
+            <a href="profile.html" class="nav-item">
+                Mi Perfil
+            </a>
+            <a href="notificaciones.html" class="nav-item">
+                Notificaciones
+            </a>
+            <a href="../index.html" class="nav-item">
+                Cerrar Sesión
+            </a>
+        </div>
+  <div class="contenido-gamificacion">
+    <h1 class="titulo-otros-interno">Otros</h1>
+
+    <div class="caja-flecha-con-texto">
+      <a href="otros.html" class="caja-flecha-atras" title="Volver a Otros">&larr;</a>
+      <span class="texto-gamificacion">Sistema de Gamificación</span>
+    </div>
+
+    <div class="panel-usuario">
+      <div class="avatar-usuario">
+        <div class="imagen-avatar">👤</div>
+        <h3>Juan Pérez</h3>
+        <p class="nivel-usuario">Nivel 3 - Buen Samaritano</p>
+      </div>
+      
+      <div class="puntos-actuales">
+        <h2>🏆 Puntos Actuales: <span class="puntos-numero">475</span></h2>
+        <div class="barra-progreso">
+          <div class="progreso-fill" style="width: 75%"></div>
+        </div>
+        <p>125 puntos para el próximo nivel</p>
+      </div>
+    </div>
+
+    <div class="formas-ganar-puntos">
+      <h2 class="titulo-seccion">💎 Cómo Ganar Puntos</h2>
+      <div class="actividades-grid">
+        <div class="actividad-item">
+          <div class="icono-actividad">📝</div>
+          <h4>Publicar Objeto Perdido</h4>
+          <p class="puntos-valor">+20 puntos</p>
+        </div>
+        <div class="actividad-item">
+          <div class="icono-actividad">🤝</div>
+          <h4>Entregar Objeto Encontrado</h4>
+          <p class="puntos-valor">+50 puntos</p>
+        </div>
+        <div class="actividad-item">
+          <div class="icono-actividad">✅</div>
+          <h4>Recuperar tu Objeto</h4>
+          <p class="puntos-valor">+30 puntos</p>
+        </div>
+        <div class="actividad-item">
+          <div class="icono-actividad">👀</div>
+          <h4>Reportar Objeto Sospechoso</h4>
+          <p class="puntos-valor">+15 puntos</p>
+        </div>
+        <div class="actividad-item">
+          <div class="icono-actividad">💬</div>
+          <h4>Ayudar a otros Usuarios</h4>
+          <p class="puntos-valor">+10 puntos</p>
+        </div>
+        <div class="actividad-item">
+          <div class="icono-actividad">📅</div>
+          <h4>Uso Diario de la App</h4>
+          <p class="puntos-valor">+5 puntos</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sistema-niveles">
+      <h2 class="titulo-seccion">🎯 Sistema de Niveles</h2>
+      <div class="niveles-lista">
+        <div class="nivel-item nivel-completado">
+          <div class="nivel-badge">1</div>
+          <div class="nivel-info">
+            <h4>🥉 Novato</h4>
+            <p>0 - 100 puntos</p>
+          </div>
+        </div>
+        <div class="nivel-item nivel-completado">
+          <div class="nivel-badge">2</div>
+          <div class="nivel-info">
+            <h4>🥈 Colaborador</h4>
+            <p>101 - 300 puntos</p>
+          </div>
+        </div>
+        <div class="nivel-item nivel-actual">
+          <div class="nivel-badge">3</div>
+          <div class="nivel-info">
+            <h4>🥇 Buen Samaritano</h4>
+            <p>301 - 600 puntos</p>
+          </div>
+        </div>
+        <div class="nivel-item">
+          <div class="nivel-badge">4</div>
+          <div class="nivel-info">
+            <h4>🏆 Héroe del Campus</h4>
+            <p>601 - 1000 puntos</p>
+          </div>
+        </div>
+        <div class="nivel-item">
+          <div class="nivel-badge">5</div>
+          <div class="nivel-info">
+            <h4>👑 Leyenda UPC</h4>
+            <p>1000+ puntos</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="recompensas">
+      <h2 class="titulo-seccion">🎁 Recompensas Disponibles</h2>
+      <div class="recompensas-grid">
+        <div class="recompensa-item disponible">
+          <div class="recompensa-icono">☕</div>
+          <h4>Café Gratis</h4>
+          <p class="costo-puntos">200 puntos</p>
+          <button class="btn-canjear btn-bloqueado" disabled>No disponible</button>
+        </div>
+        <div class="recompensa-item disponible">
+          <div class="recompensa-icono">🍕</div>
+          <h4>Pizza Personal</h4>
+          <p class="costo-puntos">400 puntos</p>
+          <button class="btn-canjear btn-bloqueado" disabled>No disponible</button>
+        </div>
+        <div class="recompensa-item no-disponible">
+          <div class="recompensa-icono">🎒</div>
+          <h4>Mochila UPC</h4>
+          <p class="costo-puntos">800 puntos</p>
+          <button class="btn-canjear btn-bloqueado" disabled>Faltan 325 puntos</button>
+        </div>
+        <div class="recompensa-item no-disponible">
+          <div class="recompensa-icono">🎧</div>
+          <h4>Audífonos UPC</h4>
+          <p class="costo-puntos">1200 puntos</p>
+          <button class="btn-canjear btn-bloqueado" disabled>Faltan 725 puntos</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="historial-puntos">
+      <h2 class="titulo-seccion">📊 Historial Reciente</h2>
+      <div class="historial-lista">
+        <div class="historial-item positivo">
+          <div class="historial-icono">🤝</div>
+          <div class="historial-info">
+            <p><strong>Entregaste un celular encontrado</strong></p>
+            <span class="fecha">Hace 2 días</span>
+          </div>
+          <div class="puntos-ganados">+50</div>
+        </div>
+        <div class="historial-item positivo">
+          <div class="historial-icono">📝</div>
+          <div class="historial-info">
+            <p><strong>Publicaste una cartuchera perdida</strong></p>
+            <span class="fecha">Hace 5 días</span>
+          </div>
+          <div class="puntos-ganados">+20</div>
+        </div>
+        <div class="historial-item negativo">
+          <div class="historial-icono">☕</div>
+          <div class="historial-info">
+            <p><strong>Canjeaste un café gratis</strong></p>
+            <span class="fecha">Hace 1 semana</span>
+          </div>
+          <div class="puntos-perdidos">-200</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
