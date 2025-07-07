@@ -94,19 +94,45 @@ function switchSection(section) {
     } else if (section === 'otros') {
         window.location.href = 'otros.html';
     }
-    // Agregar más redirecciones según sea necesario
     console.log(`Navegando a: ${section}`);
 }
 
 // Función para eliminar publicación
 function deletePost() {
     if (confirm('¿Estás seguro de que quieres eliminar esta publicación?')) {
-        console.log('Publicación eliminada');
-        alert('Tu publicación ha sido eliminada exitosamente');
+        // Obtener el ID de la publicación desde localStorage
+        const publicacionData = localStorage.getItem('publicacionDetalle');
         
-        // Limpiar localStorage y regresar
-        localStorage.removeItem('publicacionDetalle');
-        window.location.href = 'mis_publicaciones.html';
+        if (publicacionData) {
+            const publicacion = JSON.parse(publicacionData);
+            const publicacionId = publicacion.id;
+            
+            // Obtener las publicaciones guardadas
+            const publicacionesGuardadas = localStorage.getItem('publicacionesData');
+            
+            if (publicacionesGuardadas && publicacionId) {
+                let publicacionesData = JSON.parse(publicacionesGuardadas);
+                
+                // Eliminar la publicación específica
+                delete publicacionesData[publicacionId];
+                
+                // Guardar los cambios
+                localStorage.setItem('publicacionesData', JSON.stringify(publicacionesData));
+                
+                // Limpiar el detalle de la publicación
+                localStorage.removeItem('publicacionDetalle');
+                
+                // Mostrar mensaje de confirmación
+                alert('Tu publicación ha sido eliminada exitosamente');
+                
+                // Redirigir a la página de publicaciones
+                window.location.href = 'Posts.html';
+            } else {
+                alert('Error al eliminar la publicación');
+            }
+        } else {
+            alert('No se encontraron datos de la publicación');
+        }
     }
 }
 
@@ -115,7 +141,7 @@ function editPost() {
     console.log('Editando publicación...');
     alert('Redirigiendo a la página de edición de tu publicación...');
     // Aquí puedes redirigir a una página de edición
-    window.location.href = 'mispublicaciones_cartuchera.html';
+    window.location.href = 'edit_post.html';
 }
 
 // Función para cerrar sesión

@@ -1,5 +1,5 @@
 // Datos de las publicaciones
-const publicacionesData = {
+let publicacionesData = {
     1: {
         objeto: 'Cartuchera',
         sede: 'San Miguel',
@@ -28,20 +28,150 @@ const publicacionesData = {
         area: 'Salon B303',
         fecha: '12/05/2025',
         usuario: 'Oliver Martinez',
-        descripcion: 'Bolso de cuero marrón, marca desconocida. Tiene varios compartimentos y una correa ajustable. En su interior había algunos documentos y llaves.',
+        descripción: 'Bolso de cuero marrón, marca desconocida. Tiene varios compartimentos y una correa ajustable. En su interior había algunos documentos y llaves.',
         hallazgo: 'Fue encontrado en el Salón B303, colgado en el respaldo de una silla en la primera fila.',
         status: 'En mi posesión',
         imagen: 'assets/images/posts/bolso.jpg'
     }
 };
 
+// Función para cargar las publicaciones desde localStorage al iniciar
+function cargarPublicaciones() {
+    const publicacionesGuardadas = localStorage.getItem('publicacionesData');
+    if (publicacionesGuardadas) {
+        publicacionesData = JSON.parse(publicacionesGuardadas);
+    } else {
+        // Si no hay datos guardados, guardar los datos iniciales
+        localStorage.setItem('publicacionesData', JSON.stringify(publicacionesData));
+    }
+}
+
+// Función para guardar las publicaciones en localStorage
+function guardarPublicaciones() {
+    localStorage.setItem('publicacionesData', JSON.stringify(publicacionesData));
+}
+
 // Función para ver el detalle de una publicación
 function verDetalle(publicacionId) {
     // Guardar los datos de la publicación en localStorage para pasarlos a la página de detalle
     const publicacion = publicacionesData[publicacionId];
     if (publicacion) {
-        localStorage.setItem('publicacionDetalle', JSON.stringify(publicacion));
+        const publicacionConId = {
+            ...publicacion,
+            id: publicacionId
+        };
+        localStorage.setItem('publicacionDetalle', JSON.stringify(publicacionConId));
         // Redirigir a la página de detalle
-        window.location.href = 'detalle_mis_publicaciones.html';
+        window.location.href = 'MyPost_Details.html';
     }
 }
+
+// Función para eliminar una publicación
+function eliminarPublicacion(publicacionId) {
+    if (confirm('¿Estás seguro de que quieres eliminar esta publicación?')) {
+        // Eliminar la publicación del objeto de datos
+        delete publicacionesData[publicacionId];
+        
+        // Guardar los cambios en localStorage
+        guardarPublicaciones();
+        
+        // Mostrar mensaje de confirmación
+        alert('Tu publicación ha sido eliminada exitosamente');
+        
+        // Recargar la página para mostrar los cambios
+        window.location.reload();
+    }
+}
+
+// Función para renderizar las publicaciones en el DOM
+function renderizarPublicaciones() {
+    const container = document.querySelector('.Main_Content');
+    
+    // Limpiar el contenido existente (mantener solo el encabezado)
+    const encabezado = container.querySelector('.Encabezado');
+    container.innerHTML = '';
+    container.appendChild(encabezado);
+    
+    // Crear las filas de publicaciones
+    const publicacionesArray = Object.entries(publicacionesData);
+    
+    if (publicacionesArray.length === 0) {
+        // Si no hay publicaciones, mostrar mensaje
+        const mensajeVacio = document.createElement('div');
+        mensajeVacio.className = 'mensaje-vacio';
+        mensajeVacio.style.textAlign = 'center';
+        mensajeVacio.style.padding = '50px';
+        mensajeVacio.style.color = '#666';
+        mensajeVacio.innerHTML = '<h3>No tienes publicaciones aún</h3><p>Haz clic en "Nueva Publicación" para crear tu primera publicación.</p>';
+        container.appendChild(mensajeVacio);
+        return;
+    }
+    
+    // Crear filas de publicaciones
+    let filaActual = null;
+    let publicacionesEnFila = 0;
+    
+    publicacionesArray.forEach(([id, publicacion], index) => {
+        // Crear nueva fila cada 2 publicaciones
+        if (publicacionesEnFila === 0) {
+            filaActual = document.createElement('div');
+            filaActual.className = `Row_${Math.floor(index / 2) + 1}`;
+            container.appendChild(filaActual);
+        }
+        
+        // Crear el elemento de la publicación
+        const postElement = document.createElement('div');
+        postElement.className = `Post_${((index % 2) + 1)}`;
+        
+        // Determinar el estado de ubicación
+        let ubicacionClass = '';
+        let ubicacionText = publicacion.status;
+        
+        if (publicacion.status === 'En Objetos Perdidos') {
+            ubicacionClass = 'ubicacion-perdidos';
+        } else if (publicacion.status === 'En mi posesión') {
+            ubicacionClass = 'ubicacion-posesion';
+        } else if (publicacion.status === 'Entregado') {
+            ubicacionClass = 'ubicacion-entregado';
+        }
+        
+        postElement.innerHTML = `
+            <div>
+                <img src="${publicacion.imagen}" class="IMG" width="8%" alt="${publicacion.objeto}">
+            </div>
+            <p>
+                <span class="Caracteristica"> Objeto:</span>
+                <span class="Descripcion">${publicacion.objeto}</span> <br>
+                <span class="Caracteristica"> Sede:</span>
+                <span class="Descripcion">${publicacion.sede}</span> <br>
+                <span class="Caracteristica"> Area:</span>
+                <span class="Descripcion">${publicacion.area}</span> <br>
+                <span class="Caracteristica"> Dia Encontrado:</span>
+                <span class="Descripcion">${publicacion.fecha}</span> <br>
+                <span class="Caracteristica"> De:</span>
+                <span class="Descripcion">Usted</span><br>
+            </p>
+            <p><span class="Ubicacion ${ubicacionClass}">${ubicacionText}</span></p>
+            <nav class="Detalles_Publicacion">
+                <a href="#" onclick="verDetalle(${id})"><i></i>Ver más</a>
+            </nav>
+        `;
+        
+        filaActual.appendChild(postElement);
+        publicacionesEnFila++;
+        
+        // Reiniciar contador si llegamos a 2 publicaciones por fila
+        if (publicacionesEnFila === 2) {
+            publicacionesEnFila = 0;
+        }
+    });
+}
+
+// Función para inicializar la página
+function inicializarPagina() {
+    cargarPublicaciones();
+    renderizarPublicaciones();
+}
+
+// Cargar las publicaciones al iniciar la página
+document.addEventListener('DOMContentLoaded', inicializarPagina);
