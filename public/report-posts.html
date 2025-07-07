@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reportar Publicación</title>
+  <link rel="stylesheet" href="/public/assets/styles/report-posts.css" />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">
+        <img src="assets/images/logo.JPG" alt="Safe Campus Logo">
+      </div>
+      <div class="nav-item" onclick="switchSection('mis-publicaciones')">Mis publicaciones</div>
+      <div class="nav-item active" onclick="switchSection('publicaciones')">Publicaciones</div>
+      <div class="nav-item" onclick="switchSection('otros')">Otros</div>
+      <div class="nav-item" onclick="switchSection('perfil')">Mi Perfil</div>
+      <div class="nav-item" onclick="switchSection('notificaciones')">Notificaciones</div>
+      <div class="nav-item" onclick="logout()">Cerrar Sesión</div>
+    </div>
+
+    <div class="main-content">
+      <div class="breadcrumb">Formulario de Reporte</div>
+      <div class="content">
+        <div class="info-section">
+          <form id="formReporte">
+            <div class="info-item">
+              <label class="info-label" for="motivo">Motivo del reporte</label>
+              <input type="text" id="motivo" name="motivo" placeholder="Ej. Contenido inapropiado" required />
+            </div>
+
+            <div class="info-item">
+              <label class="info-label" for="descripcion">Descripción adicional</label>
+              <textarea id="descripcion" name="descripcion" placeholder="Explica brevemente por qué estás reportando esta publicación" required></textarea>
+            </div>
+
+            <div class="info-item">
+              <label class="info-label" for="pruebas">Subir Pruebas</label>
+              <input type="file" id="pruebas" name="pruebas" accept="image/*,.pdf" />
+            </div>
+
+            <div class="actions-container">
+              <button type="submit" class="action-btn btn-contact">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/scripts/report-posts.js"></script>
+  <script>
+    document.getElementById('formReporte').addEventListener('submit', function (e) {
+      e.preventDefault();
+      alert("Reporte enviado correctamente. Será revisado por el equipo.");
+      this.reset();
+      setTimeout(function () {
+        window.location.href = "Search.html";
+      }, 100);
+    });
+  </script>
+</body>
+</html>

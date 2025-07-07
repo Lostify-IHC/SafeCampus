@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi Perfil - Safe Campus</title>
+    <link rel="stylesheet" href="./assets/styles/profile.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="sidebar">
+        <div class="logo">
+          <img
+            src="assets/images/logo.JPG"
+            alt="Safe Campus Logo"
+          />
+        </div>
+        <div class="nav-item" onclick="switchSection('mis-publicaciones')">
+          Mis publicaciones
+        </div>
+        <div class="nav-item" onclick="switchSection('publicaciones')">
+          Publicaciones
+        </div>
+        <div class="nav-item" onclick="switchSection('otros')">Otros</div>
+        <div class="nav-item active" onclick="switchSection('perfil')">
+          Mi Perfil
+        </div>
+        <div class="nav-item" onclick="switchSection('notificaciones')">
+          Notificaciones
+        </div>
+        <div class="nav-item" onclick="logout('cerrarSesion')">Cerrar Sesión</div>
+      </div>
+
+      <div class="main-content">
+        <div class="breadcrumb">Mi Perfil</div>
+        <div class="content">
+          <div class="info-section">
+            <div class="profile-image-container">
+              <div class="profile-image">
+            </div>
+            </div>
+            <form class="profile-form">
+              <div class="left-section">
+                <div class="info-item">
+                  <label class="info-label">Nombres</label>
+                  <input type="text" value="Oliver" />
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Apellidos</label>
+                  <input type="text" value="Martinez" />
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Celular</label>
+                  <input type="text" value="+51 927594756" />
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Correo electrónico</label>
+                  <input type="email" value="u202415895@upc.edu.pe" />
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Universidad</label>
+                  <input
+                    type="text"
+                    value="Universidad Peruana de Ciencias Aplicadas"
+                  />
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Sede</label>
+                  <input type="text" value="San Miguel" />
+                </div>
+              </div>
+
+              <div class="right-section">
+                <div class="toggle-group">
+                  <label class="info-label">Modo Oscuro</label>
+                  <label class="switch">
+                    <input type="checkbox" id="dark-mode-toggle" />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="toggle-group">
+                  <label class="info-label">Notificaciones</label>
+                  <label class="switch">
+                    <input type="checkbox" checked />
+                    <span class="slider"></span>
+                  </label>
+                </div>
+                <div class="info-item">
+                  <label class="info-label">Idioma</label>
+                  <select>
+                    <option>Español</option>
+                    <option>Inglés</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="actions-container">
+                <button type="button" class="action-btn btn-contact">
+                  <a href="editar_perfil.html">Editar</a>
+                </button>
+                <button type="button" class="action-btn btn-delete">
+                  <a href="landingpage.html">Eliminar Cuenta</a>
+                </button>
+              </div>
+            </form>
+          </div>    
+        </div>
+      </div>
+    </div>
+
+    <script src="./assets/scripts/profile.js"></script>
+  </body>
+</html>
