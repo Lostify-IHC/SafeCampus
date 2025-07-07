@@ -23,3 +23,7 @@ function logout() {
         window.location.href = 'login.html';
     }
 }
+
+function goBack() {
+  window.location.href = 'Post_Details.html';
+}

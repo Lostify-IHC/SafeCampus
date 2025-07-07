@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reportar Publicación</title>
   <link rel="stylesheet" href="/public/assets/styles/report-posts.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="container">
@@ -22,6 +23,15 @@
 
     <div class="main-content">
       <div class="breadcrumb">Formulario de Reporte</div>
+
+      <!-- Encabezado con botón de retroceso -->
+      <div class="header">
+        <button class="back-btn" onclick="goBack()">←</button>
+        <div class="header-content">
+          <h1 id="page-title">Reportar Publicación</h1>
+        </div>
+      </div>
+
       <div class="content">
         <div class="info-section">
           <form id="formReporte">
@@ -51,6 +61,10 @@
 
   <script src="assets/scripts/report-posts.js"></script>
   <script>
+    function goBack() {
+      window.location.href = 'Post_Details.html';
+    }
+
     document.getElementById('formReporte').addEventListener('submit', function (e) {
       e.preventDefault();
       alert("Reporte enviado correctamente. Será revisado por el equipo.");
