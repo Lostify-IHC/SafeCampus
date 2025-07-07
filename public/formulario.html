@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario SafeCampus</title>
+  <link rel="stylesheet" href="assets/styles/formulario.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+          <div class="logo">
+              <img
+                  src="assets/images/logo.JPG"
+                  alt="Safe Campus Logo"
+              />
+          </div>
+          <a href="Posts.html" class="nav-item">
+              Mis publicaciones
+          </a>
+          <a href="Search.html" class="nav-item active">
+              Publicaciones
+          </a>
+          <a href="#" class="nav-item">
+              Otros
+          </a>
+          <a href="profile.html" class="nav-item">
+              Mi Perfil
+          </a>
+          <a href="#" class="nav-item">
+              Notificaciones
+          </a>
+          <a href="../index.html" class="nav-item">
+              Cerrar Sesión
+          </a>
+      </div>
+    <main class="formulario">
+      <div class="header">
+        <button class="back-button" onclick="history.back()">←</button>
+        <h1>Publicaciones</h1>
+      </div>
+      <div class="form-container">
+        <h2>Formulario</h2>
+        <form id="contact-form">
+          <label for="nombres">Nombres</label>
+          <input type="text" id="nombres" name="nombres">
+
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" name="apellidos">
+
+          <label for="contacto">Numero de contacto</label>
+          <input type="text" id="contacto" name="contacto">
+
+          <label for="correo">Correo de contacto</label>
+          <input type="email" id="correo" name="correo">
+
+          <label for="descripcion">Descripción de perdida</label>
+          <textarea id="descripcion" name="descripcion"></textarea>
+
+          <label for="pruebas">Subir Pruebas</label>
+          <input type="file" id="pruebas" name="pruebas">
+
+          <button type="submit" class="submit">Enviar</button>
+        </form>
+      </div>
+    </main>
+  </div>
+  <script src="assets/scripts/formulario.js"></script>
+</body>
+</html>
