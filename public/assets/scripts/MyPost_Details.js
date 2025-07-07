@@ -88,10 +88,10 @@ function switchSection(section) {
     } else if (section === 'publicaciones') {
         window.location.href = 'Search.html';
     } else if (section === 'perfil') {
-        window.location.href = 'perfil.html';
-    }else if (section === 'notificaciones') {
-        window.location.href = 'notificaciones.html';
-    }else if (section === 'otros') {
+        window.location.href = 'profile.html';
+    } else if (section === 'notificaciones') {
+        window.location.href = 'notifications.html';
+    } else if (section === 'otros') {
         window.location.href = 'otros.html';
     }
     // Agregar más redirecciones según sea necesario
