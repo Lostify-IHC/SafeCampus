@@ -26,6 +26,29 @@ body {
   color: #083AA9;
   font-size: 28px;
   margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Botón desactivar notificaciones */
+.btn-desactivar {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.btn-desactivar:hover {
+  background-color: #c0392b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Lista de notificaciones */
@@ -44,6 +67,12 @@ body {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.lista-notificaciones li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .lista-notificaciones li::before {
@@ -52,6 +81,8 @@ body {
   color: #083AA9;
   margin-right: 10px;
 }
+
+
 
 .sidebar {
   height: 100vh;

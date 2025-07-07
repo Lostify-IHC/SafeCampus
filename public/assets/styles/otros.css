@@ -41,7 +41,9 @@ body {
 }
 
 .btn-informe-perdidas-otros,
-.btn-tips-otros {
+.btn-tips-otros,
+.btn-contacto-otros,
+.btn-gamificacion-otros {
   background-color: #083baf;
   color: white;
   padding: 2vw 0;
@@ -58,7 +60,9 @@ body {
 }
 
 .btn-informe-perdidas-otros:hover,
-.btn-tips-otros:hover {
+.btn-tips-otros:hover,
+.btn-contacto-otros:hover,
+.btn-gamificacion-otros:hover {
   background-color: #062a7e;
 }
 /*Parametros de la barra lateral azul*/
