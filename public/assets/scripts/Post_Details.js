@@ -187,7 +187,7 @@ function contactOwner() {
         // Aquí puedes implementar la lógica para contactar al usuario
         console.log('Iniciando contacto con:', publicacion.usuario);
         
-        // Ejemplo: redirigir a una página de chat o abrir modal de contacto
+        
         // window.location.href = `chat.html?usuario=${publicacion.usuario}&objeto=${publicacion.objeto}`;
     }
 }
