@@ -91,7 +91,8 @@ body {
 .Boton_Publi{
     background-color: #083AA9;
     border-color: #4975fa;
-    width: 180px;
+    width: 100%;
+    max-width: 180px;
     height: 40px;
     border-radius: 5px;
     border-width: 2px;
@@ -105,6 +106,7 @@ body {
     margin-left: 15px;
     line-height: 40px;
     height: 100%;
+    position: absolute;
 }
 /*Separacion de pares de publicaciones*/
 .Row_1{
@@ -215,16 +217,25 @@ body {
     position:absolute;
     margin-left: 300px;
     margin-top: 7px;
+    width: 90px;
+    height:auto;
     border-style: solid;
     border-color:#39568a;
     border-radius: 3px;
     border-width: 2px;
 }
 /*Diseño responsive*/
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .container {
     flex-direction: column;
     height: auto;
+  }
+  .logo {
+    font-size: 17px;
+    padding: 18px;
+  }
+  .logo img {
+    width: 90%;
   }
   .sidebar {
     width: 100%;
@@ -233,39 +244,116 @@ body {
   }
   .Main_Content{
     height: auto;
-    position: flex;
+    width: 100%;
   }
-  .Mis_Publicaciones{
-    height: auto;
-    position: flex;
+  .Encabezado{
+    flex-direction: column;  
+    align-items: flex-start; 
+    gap: 10px;               
   }
-  .Boton_Publi{
+  .Boton_Publi {
+    margin-left: 20px;
+    margin-top: 0;
+  }
+  .Post_1,
+  .Post_2,
+  .Post_3 {
+    margin-left: 0px;
+    width: 100%;
+    max-width: 878px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  .Detalles_Publicacion {
     position: relative;
-    height: auto;
-    margin-left: 30px;
-    margin-top: 30px;
-  }
-  .Post_1{
-    margin-left: 0px;
-    width: 528px;
-  }
-  .Post_2{
-    flex-wrap: wrap;
-    margin-left: 0px;
-    width: 528px;
-  }
-  .Post_3{
-    flex-wrap: wrap;
-    margin-top: 20px;
-    margin-left: 0px;
-    width: 528px;
+    margin-left: calc(90vw - 150px);
   }
   .IMG{
-    margin-left: 415px;
+    margin-left: 750px;
+    margin-left: calc(90vw - 150px);
     margin-top: 7px;
-    width: 15%;
   }
-  .Detalles_Publicacion{
-  margin-left: 410px;
+}
+
+@media (max-width: 768px) {
+  .Post_1,
+  .Post_2,
+  .Post_3 {
+    width: 100%;
+    max-width: 100%;
+  }
+  .logo {
+    font-size: 16px;
+    padding: 15px;
+    margin: 15px auto;
+  }
+
+  .logo img {
+    width: 88%;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
+  .IMG {
+    margin-left: calc(90vw - 150px);
+  }
+
+  .Detalles_Publicacion {
+    position: relative;
+    margin-left: calc(90vw - 150px);
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    font-size: 15px;
+    padding: 12px;
+    margin: 10px auto;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo img {
+    width: 85%;
+    margin-top: 5px;
+  }
+  .Encabezado{
+    flex-direction: column;  
+    align-items: flex-start; 
+    gap: 10px;               
+  }
+  .Titulo{
+    margin-left: 0px;
+  }
+  .Boton_Publi {
+    margin-left: 0px;
+    margin-top: 0;
+  }
+  .Post_1,
+  .Post_2,
+  .Post_3 {
+    margin-left: -20px;
+    height: 370px;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+
+  .IMG {
+    position: absolute;
+    margin-top: 170px;
+    margin-left: 10px;
+  }
+
+  .Detalles_Publicacion {
+    position: relative;
+    margin-left: 10px;
+    margin-top: 160px;
+  }
+  .Ubicacion{
+    margin-top: 115px;
+    margin-left: 0px;
   }
 }
