@@ -132,17 +132,17 @@ body {
 
 .register-image {
     flex: 1;
-    min-height: 500px;
-}
-
-.image-placeholder {
-    width: 100%;
-    height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #e0e0e0;
-    font-size: 14px;
+    overflow: hidden;
+}
+
+.responsive-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* Responsive */
@@ -157,7 +157,8 @@ body {
     }
     
     .register-image {
-        display: none;
+        min-height: 300px;
+        width: 100%;
     }
     
     .back-button {
@@ -168,6 +169,10 @@ body {
 @media (max-width: 576px) {
     .register-form {
         padding: 25px;
+    }
+    
+    .register-image {
+        min-height: 200px;
     }
     
     .back-button {
