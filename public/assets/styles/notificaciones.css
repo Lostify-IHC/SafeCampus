@@ -136,3 +136,57 @@ body {
   background-color: #fff;
   color: #083AA9;
 }
+
+body.dark-mode {
+  background: #121212;
+}
+
+body.dark-mode .contenido-notificaciones {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .titulo-notificaciones {
+  color: #ffffff;
+}
+
+body.dark-mode .lista-notificaciones li {
+  background-color: #2c2c2c;
+  color: #ffffff;
+  border-left-color: #1ea2ee;
+}
+
+body.dark-mode .lista-notificaciones li::before {
+  color: #1ea2ee;
+}
+
+body.dark-mode .btn-desactivar {
+  background-color: #ff6b5f;
+  color: white;
+}
+
+body.dark-mode .btn-desactivar:hover {
+  background-color: #e65a4d;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .logo {
+  background: #292929;
+  color: #1ea2ee;
+}
+
+body.dark-mode .nav-item {
+  color: #ddd;
+}
+
+body.dark-mode .nav-item:hover {
+  color: #1ea2ee;
+  background-color: #292929;
+}
+
+body.dark-mode .nav-item.active {
+  background-color: #292929;
+  color: #1ea2ee;
+}

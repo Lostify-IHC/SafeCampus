@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Scroll suave para los enlaces del navbar
     const navLinks = document.querySelectorAll('.nav-link');
+
+    
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {

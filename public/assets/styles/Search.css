@@ -467,3 +467,98 @@ body {
     margin-left: 0px;
   }
 }
+
+
+body.dark-mode {
+  background-color: #121212;
+}
+
+body.dark-mode .container {
+  background-color: #121212;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .logo {
+  background-color: #292929;
+  color: #1ea2ee;
+}
+
+body.dark-mode .nav-item {
+  color: #ddd;
+}
+
+body.dark-mode .nav-item:hover {
+  background-color: #292929;
+  color: #1ea2ee;
+}
+
+body.dark-mode .nav-item.active {
+  background-color: #292929;
+  color: #1ea2ee;
+}
+
+body.dark-mode .Titulo,
+body.dark-mode .Post_1 p,
+body.dark-mode .Post_2 p,
+body.dark-mode .Post_3 p,
+body.dark-mode .Post_4 p,
+body.dark-mode .fila-filtro {
+  color: #ffffff;
+}
+
+body.dark-mode .Post_1,
+body.dark-mode .Post_2,
+body.dark-mode .Post_3,
+body.dark-mode .Post_4 {
+  background-color: #1f1f1f;
+  border-color: #555;
+}
+
+body.dark-mode .Ubicacion {
+  background-color: #2a2a2a;
+  color: #eee;
+  border-color: #1ea2ee;
+}
+
+body.dark-mode .Detalles_Publicacion {
+  background-color: #1ea2ee;
+  border-color: #4d72ea;
+}
+
+body.dark-mode .Detalles_Publicacion a {
+  color: #ffffff;
+}
+
+body.dark-mode .estrella {
+  -webkit-text-stroke: 2px #1ea2ee;
+}
+
+body.dark-mode .estrella.activa {
+  color: #1ea2ee;
+}
+
+body.dark-mode .menu-filtros {
+  background-color: #1f1f1f;
+  border-color: #4d72ea;
+}
+
+body.dark-mode .menu-filtros input[type="text"] {
+  background-color: #292929;
+  color: #fff;
+  border-color: #4d72ea;
+}
+
+body.dark-mode .busqueda input[type="text"] {
+  background-color: #292929;
+  color: #fff;
+  border-color: #4d72ea;
+}
+
+body.dark-mode .busqueda button {
+  background-color: #292929;
+  color: #fff;
+  border-color: #4d72ea;
+}

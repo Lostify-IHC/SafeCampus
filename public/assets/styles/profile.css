@@ -298,32 +298,85 @@ input:checked + .slider:before {
   margin-bottom: 20px;
 }
 
-/* Modo oscuro funcional */
+/* MODO OSCURO - ESTILO UNIFICADO */
 body.dark-mode {
   background-color: #121212;
-  color: #fff;
+  color: #e0e0e0;
 }
 
 body.dark-mode .main-content {
   background-color: #1e1e1e;
+  color: #e0e0e0;
 }
 
-body.dark-mode input,
-body.dark-mode select {
-  background-color: #333;
-  color: #fff;
-  border-color: #fff;
+body.dark-mode .breadcrumb {
+  background-color: #1e1e1e;
+  color: #64b5f6;
 }
 
 body.dark-mode .sidebar {
-  background-color: #0d0d0d;
+  background-color: #0b0b0b;
+}
+
+body.dark-mode .logo {
+  background-color: #1e1e1e;
+  color: #64b5f6;
 }
 
 body.dark-mode .nav-item {
-  color: #fff;
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-item:hover {
+  color: #083AA9;
+  background-color: #2c2c2c;
 }
 
 body.dark-mode .nav-item.active {
-  background-color: #333;
-  color: #fff;
+  background-color: #2c2c2c;
+  color: #64b5f6;
 }
+
+body.dark-mode .info-section {
+  background-color: #232323;
+  color: #e0e0e0;
+}
+
+body.dark-mode .info-label {
+  color: #90caf9;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode select {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
+body.dark-mode .profile-image {
+  background-color: #333;
+  border-color: #64b5f6;
+}
+
+body.dark-mode .btn-contact {
+  background-color: #1976d2;
+  border-color: #1976d2;
+  color: white;
+}
+
+body.dark-mode .btn-contact:hover {
+  background-color: #115293;
+  box-shadow: 0 4px 12px rgba(100, 181, 246, 0.3);
+}
+
+body.dark-mode .btn-delete {
+  background-color: #c62828;
+  border-color: #c62828;
+}
+
+body.dark-mode .btn-delete:hover {
+  background-color: #8e0000;
+  box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
+}
+

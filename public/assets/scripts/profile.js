@@ -8,21 +8,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.classList.add('dark-mode');
         modoOscuroSwitch.checked = true;
     }
-
-    // Funcionalidad Modo Oscuro
     modoOscuroSwitch.addEventListener('change', () => {
-        if (modoOscuroSwitch.checked) {
-            document.body.classList.add('dark-mode');
-            localStorage.setItem('modoOscuro', 'true');
-        } else {
-            document.body.classList.remove('dark-mode');
-            localStorage.setItem('modoOscuro', 'false');
-        }
-    });
+    if (modoOscuroSwitch.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('modoOscuro', 'true');
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('modoOscuro', 'false');
+    }
+});
+
 
     // Funcionalidad cambio de idioma (simulada)
     idiomaSelect.addEventListener('change', () => {
-        if (idiomaSelect.value === 'Inglés') {
+        if (idiomaSelect.value === 'Ingles') {
             document.querySelector('.profile-header').innerText = 'My Profile';
             document.querySelector('label[for="nombres"]').innerText = 'First Name';
             document.querySelector('label[for="apellidos"]').innerText = 'Last Name';
@@ -45,6 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.querySelector('label[for="notificaciones"]').innerText = 'Notificaciones';
             document.querySelector('label[for="idioma"]').innerText = 'Idioma';
         }
+        localStorage.setItem("idioma", idiomaSelect.value);
     });
 
     // Cargar idioma desde localStorage si deseas en un futuro

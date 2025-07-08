@@ -200,3 +200,65 @@ body {
   background-color: #fff;
   color: #083AA9;
 }
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1f1f1f;
+}
+
+body.dark-mode .logo {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+body.dark-mode .nav-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-item:hover {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+body.dark-mode .nav-item.active {
+  background-color: #2c2c2c;
+  color: #ffffff;
+}
+
+body.dark-mode .contenido-contacto {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .texto-contacto,
+body.dark-mode .titulo-otros-interno,
+body.dark-mode .titulo-contacto,
+body.dark-mode .contacto-item h3 {
+  color: #ffffff;
+}
+
+body.dark-mode .informacion-contacto,
+body.dark-mode .contacto-item {
+  background-color: #2c2c2c;
+  box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .contacto-item p,
+body.dark-mode .horarios-lista li,
+body.dark-mode .procedimiento-lista li {
+  color: #cccccc;
+}
+
+body.dark-mode .contacto-emergencia {
+  background: linear-gradient(135deg, #b03a2e, #922b21);
+  border-left-color: #7b241c;
+}
+
+body.dark-mode .contacto-emergencia h3,
+body.dark-mode .contacto-emergencia p {
+  color: #ffffff;
+}
