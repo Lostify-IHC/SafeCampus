@@ -1,20 +1,17 @@
-// Este código se ejecuta en tu página New_post.html
 document.addEventListener('DOMContentLoaded', function() {
-  
   const form = document.getElementById('new-post-form');
 
   form.addEventListener('submit', function(event) {
-    event.preventDefault(); // Evita que la página se recargue
+    event.preventDefault();
 
     const newObjectName = document.getElementById('nombre').value;
 
-    // Se asegura que el usuario ponga un nombre al objeto
     if (!newObjectName) {
       alert('Por favor, ingresa el nombre del objeto.');
       return;
     }
 
-    // 1. Recolecta todos los datos del formulario
+    // 1. Recolecta los datos del formulario
     const newPostData = {
       objeto: newObjectName,
       sede: document.getElementById('sede').value,
@@ -23,25 +20,28 @@ document.addEventListener('DOMContentLoaded', function() {
       descripcion: document.getElementById('descripcion_objeto').value,
       hallazgo: document.getElementById('descripcion_hallazgo').value,
       status: document.getElementById('estado').value,
-      usuario: 'Usted', // Puedes cambiar esto si tienes un sistema de usuarios
-      imagen: 'assets/images/posts/default.png' // Una imagen por defecto para los nuevos posts
+      usuario: 'Usted',
+      imagen: 'assets/images/posts/default.png' // Imagen por defecto
     };
 
-    // 2. Lee la "base de datos" actual desde la memoria del navegador
+    // 2. Lee la "base de datos" actual desde localStorage
     const publicacionesGuardadas = localStorage.getItem('publicacionesData');
     const publicacionesData = publicacionesGuardadas ? JSON.parse(publicacionesGuardadas) : {};
 
-    // 3. Crea un ID nuevo y único para la publicación
-    const nuevoId = 'post_' + Date.now(); // Un ID simple basado en la fecha y hora
+    // --- CAMBIO CLAVE AQUÍ ---
+    // 3. Calcula el nuevo ID numérico
+    const ids = Object.keys(publicacionesData).map(Number); // Convierte todos los IDs a números
+    const maxId = ids.length > 0 ? Math.max(...ids) : 0; // Encuentra el ID más alto
+    const nuevoId = maxId + 1; // El nuevo ID será el siguiente número
 
-    // 4. Añade la nueva publicación a la base de datos
+    // 4. Añade la nueva publicación con su nuevo ID numérico
     publicacionesData[nuevoId] = newPostData;
 
-    // 5. Guarda la base de datos actualizada en la memoria
+    // 5. Guarda la base de datos actualizada
     localStorage.setItem('publicacionesData', JSON.stringify(publicacionesData));
 
-    // 6. Muestra el mensaje de éxito y redirige
+    // 6. Muestra el mensaje y redirige
     alert('Publicación guardada');
-    window.location.href = 'Posts.html'; // Redirige a la página de lista de tu compañero
+    window.location.href = 'Posts.html';
   });
 });
