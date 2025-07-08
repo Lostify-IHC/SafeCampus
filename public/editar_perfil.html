@@ -23,7 +23,7 @@
             <a href="otros.html" class="nav-item">
                 Otros
             </a>
-            <a href="profile.html" class="nav-item">
+            <a href="perfil_editado.html" class="nav-item">
                 Mi Perfil
             </a>
             <a href="notificaciones.html" class="nav-item">
@@ -35,26 +35,120 @@
         </div>
   <div class="contenido-editar-perfil">
     <div class="caja-flecha-con-texto">
-      <span class="caja-flecha-atras">&larr;</span>
+      <a href="perfil_editado.html" class="caja-flecha-atras">&larr;</a>
       <span class="texto-editar-perfil">Editar Perfil</span>
     </div>
-    <form class="formulario-editar-perfil">
+    <form class="formulario-editar-perfil" id="form-editar-perfil">
       <label class="label-nombres-editar-perfil">Nombres</label>
-      <input class="input-nombres-editar-perfil" type="text" value="Oliver" />
+      <input class="input-nombres-editar-perfil" type="text" id="nombres" name="nombres" value="Oliver" required />
       <label class="label-apellidos-editar-perfil">Apellidos</label>
-      <input class="input-apellidos-editar-perfil" type="text" value="Martinez" />
+      <input class="input-apellidos-editar-perfil" type="text" id="apellidos" name="apellidos" value="Martinez" required />
       <label class="label-celular-editar-perfil">Celular</label>
-      <input class="input-celular-editar-perfil" type="text" value="+51 927594756" />
+      <input class="input-celular-editar-perfil" type="text" id="celular" name="celular" value="+51 927594756" required />
       <label class="label-correo-editar-perfil">Correo electrónico</label>
-      <input class="input-correo-editar-perfil" type="email" value="u202415895@upc.edu.pe" />
+      <input class="input-correo-editar-perfil" type="email" id="correo" name="correo" value="u202415895@upc.edu.pe" required />
       <label class="label-universidad-editar-perfil">Universidad</label>
-      <input class="input-universidad-editar-perfil" type="text" value="Universidad Peruana de Ciencias Aplicadas" />
+      <input class="input-universidad-editar-perfil" type="text" id="universidad" name="universidad" value="Universidad Peruana de Ciencias Aplicadas" required />
       <label class="label-sede-editar-perfil">Sede</label>
-      <input class="input-sede-editar-perfil" type="text" value="San Miguel" />
+      <input class="input-sede-editar-perfil" type="text" id="sede" name="sede" value="San Miguel" required />
       <label class="label-imagen-editar-perfil">Imagen de Perfil</label>
-      <input class="input-imagen-editar-perfil" type="text" value="mifoto.png" />
-      <button class="btn-guardar-editar-perfil" type="submit">Cambiar</button>
+      <input class="input-imagen-editar-perfil" type="text" id="imagen" name="imagen" value="mifoto.png" />
+      <button class="btn-guardar-editar-perfil" type="submit">Guardar Cambios</button>
     </form>
+
+    <!-- Modal de confirmación -->
+    <div id="modal-confirmacion" class="modal" style="display: none;">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>✅ Perfil Actualizado</h2>
+        </div>
+        <div class="modal-body">
+          <p>Tus datos han sido guardados exitosamente.</p>
+          <p>Serás redirigido a tu perfil en <span id="contador">3</span> segundos...</p>
+        </div>
+        <div class="modal-footer">
+          <button id="btn-ir-perfil" class="btn-modal">Ir al Perfil Ahora</button>
+        </div>
+      </div>
+    </div>
   </div>
+
+  <script>
+    // Cargar datos guardados al iniciar
+    window.addEventListener('load', function() {
+      const datosGuardados = localStorage.getItem('perfilUsuario');
+      if (datosGuardados) {
+        const datos = JSON.parse(datosGuardados);
+        document.getElementById('nombres').value = datos.nombres || 'Oliver';
+        document.getElementById('apellidos').value = datos.apellidos || 'Martinez';
+        document.getElementById('celular').value = datos.celular || '+51 927594756';
+        document.getElementById('correo').value = datos.correo || 'u202415895@upc.edu.pe';
+        document.getElementById('universidad').value = datos.universidad || 'Universidad Peruana de Ciencias Aplicadas';
+        document.getElementById('sede').value = datos.sede || 'San Miguel';
+        document.getElementById('imagen').value = datos.imagen || 'mifoto.png';
+      }
+      
+      // Inicializar modo oscuro
+      initDarkMode();
+    });
+
+    // Funcionalidad del modo oscuro
+    function initDarkMode() {
+      const savedDarkMode = localStorage.getItem('modoOscuro');
+      
+      // Aplicar estado guardado al cargar
+      if (savedDarkMode === 'true') {
+        document.body.classList.add('dark-mode');
+      }
+    }
+
+    // Manejar envío del formulario
+    document.getElementById('form-editar-perfil').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Recopilar datos del formulario
+      const datos = {
+        nombres: document.getElementById('nombres').value,
+        apellidos: document.getElementById('apellidos').value,
+        celular: document.getElementById('celular').value,
+        correo: document.getElementById('correo').value,
+        universidad: document.getElementById('universidad').value,
+        sede: document.getElementById('sede').value,
+        imagen: document.getElementById('imagen').value
+      };
+      
+      
+      localStorage.setItem('perfilUsuario', JSON.stringify(datos));
+      
+      // Mostrar modal de confirmación
+      mostrarModal();
+    });
+
+    function mostrarModal() {
+      const modal = document.getElementById('modal-confirmacion');
+      const contador = document.getElementById('contador');
+      const btnIrPerfil = document.getElementById('btn-ir-perfil');
+      
+      modal.style.display = 'flex';
+      
+      let tiempo = 3;
+      const intervalo = setInterval(() => {
+        tiempo--;
+        contador.textContent = tiempo;
+        
+        if (tiempo <= 0) {
+          clearInterval(intervalo);
+          window.location.href = 'perfil_editado.html';
+        }
+      }, 1000);
+      
+      // Botón para ir inmediatamente
+      btnIrPerfil.addEventListener('click', function() {
+        clearInterval(intervalo);
+        window.location.href = 'perfil_editado.html';
+      });
+    }
+  </script>
+  <script src="assets/scripts/profile.js"></script>
 </body>
 </html>

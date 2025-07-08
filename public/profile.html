@@ -19,20 +19,12 @@
             alt="Safe Campus Logo"
           />
         </div>
-        <div class="nav-item" onclick="switchSection('mis-publicaciones')">
-          Mis publicaciones
-        </div>
-        <div class="nav-item" onclick="switchSection('publicaciones')">
-          Publicaciones
-        </div>
-        <div class="nav-item" onclick="switchSection('otros')">Otros</div>
-        <div class="nav-item active" onclick="switchSection('perfil')">
-          Mi Perfil
-        </div>
-        <div class="nav-item" onclick="switchSection('notificaciones')">
-          Notificaciones
-        </div>
-        <div class="nav-item" onclick="logout('cerrarSesion')">Cerrar Sesión</div>
+        <a href="Posts.html" class="nav-item">Mis publicaciones</a>
+        <a href="Search.html" class="nav-item">Publicaciones</a>
+        <a href="otros.html" class="nav-item">Otros</a>
+        <a href="profile.html" class="nav-item active">Mi Perfil</a>
+        <a href="notificaciones.html" class="nav-item">Notificaciones</a>
+        <a href="../index.html" class="nav-item">Cerrar Sesión</a>
       </div>
 
       <div class="main-content">
@@ -40,37 +32,36 @@
         <div class="content">
           <div class="info-section">
             <div class="profile-image-container">
-              <div class="profile-image">
-            </div>
+              <div class="profile-image" id="profile-image">
+                <span id="iniciales-usuario">OM</span>
+              </div>
+              <p class="nombre-imagen" id="nombre-imagen">mifoto.png</p>
             </div>
             <form class="profile-form">
               <div class="left-section">
                 <div class="info-item">
                   <label class="info-label">Nombres</label>
-                  <input type="text" value="Oliver" />
+                  <span class="info-value" id="nombres-perfil">Oliver</span>
                 </div>
                 <div class="info-item">
                   <label class="info-label">Apellidos</label>
-                  <input type="text" value="Martinez" />
+                  <span class="info-value" id="apellidos-perfil">Martinez</span>
                 </div>
                 <div class="info-item">
                   <label class="info-label">Celular</label>
-                  <input type="text" value="+51 927594756" />
+                  <span class="info-value" id="celular-perfil">+51 927594756</span>
                 </div>
                 <div class="info-item">
                   <label class="info-label">Correo electrónico</label>
-                  <input type="email" value="u202415895@upc.edu.pe" />
+                  <span class="info-value" id="correo-perfil">u202415895@upc.edu.pe</span>
                 </div>
                 <div class="info-item">
                   <label class="info-label">Universidad</label>
-                  <input
-                    type="text"
-                    value="Universidad Peruana de Ciencias Aplicadas"
-                  />
+                  <span class="info-value" id="universidad-perfil">Universidad Peruana de Ciencias Aplicadas</span>
                 </div>
                 <div class="info-item">
                   <label class="info-label">Sede</label>
-                  <input type="text" value="San Miguel" />
+                  <span class="info-value" id="sede-perfil">San Miguel</span>
                 </div>
               </div>
 
@@ -99,12 +90,8 @@
               </div>
 
               <div class="actions-container">
-                <button type="button" class="action-btn btn-contact">
-                  <a href="editar_perfil.html">Editar</a>
-                </button>
-                <button type="button" class="action-btn btn-delete">
-                  <a href="landingpage.html">Eliminar Cuenta</a>
-                </button>
+                <a href="editar_perfil.html" class="action-btn btn-contact">Editar</a>
+                <a href="../index.html" class="action-btn btn-delete">Eliminar Cuenta</a>
               </div>
             </form>
           </div>    
@@ -112,7 +99,57 @@
       </div>
     </div>
 
-    <script src="./assets/scripts/profile.js"></script>
-    
+    <script>
+      // Cargar datos del perfil desde localStorage o usar valores por defecto
+      function cargarDatosPerfil() {
+        const datosGuardados = localStorage.getItem('perfilUsuario');
+        
+        if (datosGuardados) {
+          const datos = JSON.parse(datosGuardados);
+          
+          document.getElementById('nombres-perfil').textContent = datos.nombres || 'Oliver';
+          document.getElementById('apellidos-perfil').textContent = datos.apellidos || 'Martinez';
+          document.getElementById('celular-perfil').textContent = datos.celular || '+51 927594756';
+          document.getElementById('correo-perfil').textContent = datos.correo || 'u202415895@upc.edu.pe';
+          document.getElementById('universidad-perfil').textContent = datos.universidad || 'Universidad Peruana de Ciencias Aplicadas';
+          document.getElementById('sede-perfil').textContent = datos.sede || 'San Miguel';
+          document.getElementById('nombre-imagen').textContent = datos.imagen || 'mifoto.png';
+          
+          // Actualizar iniciales
+          const iniciales = (datos.nombres?.charAt(0) || 'O') + (datos.apellidos?.charAt(0) || 'M');
+          document.getElementById('iniciales-usuario').textContent = iniciales.toUpperCase();
+        }
+      }
+
+      // Funcionalidad del modo oscuro
+      function initDarkMode() {
+        const darkModeToggle = document.getElementById('dark-mode-toggle');
+        const savedDarkMode = localStorage.getItem('darkMode') === 'true';
+        
+        if (savedDarkMode) {
+          document.body.classList.add('dark-mode');
+          darkModeToggle.checked = true;
+        }
+        
+        darkModeToggle.addEventListener('change', function() {
+          if (this.checked) {
+            document.body.classList.add('dark-mode');
+            localStorage.setItem('darkMode', 'true');
+          } else {
+            document.body.classList.remove('dark-mode');
+            localStorage.setItem('darkMode', 'false');
+          }
+        });
+      }
+
+      // Cargar datos al cargar la página
+      window.addEventListener('load', function() {
+        cargarDatosPerfil();
+        initDarkMode();
+      });
+    </script>
+
+    <script src="assets/scripts/profile.js"></script>
+
   </body>
 </html>

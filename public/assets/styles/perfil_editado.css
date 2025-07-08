@@ -86,6 +86,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 100vh;
+  min-height: 100vh;
 }
 
 .breadcrumb {
@@ -129,30 +130,18 @@ body {
   margin-bottom: 5px;
 }
 
-input[type="text"],
-input[type="email"],
-select {
-  width: 100%;
-  padding: 10px;
-  border: 2px solid #083AA9;
-  border-radius: 8px;
-  font-size: 14px;
-}
-
-/* Estilos para valores de solo lectura */
 .info-value {
-  width: 100%;
   padding: 10px;
   border: 2px solid #e0e0e0;
   border-radius: 8px;
   font-size: 14px;
   background-color: #f8f9fa;
   color: #333;
-  font-weight: 500;
 }
 
 .profile-image-container {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   margin-bottom: 50px;
@@ -161,7 +150,6 @@ select {
 .profile-image {
   width: 100px;
   height: 100px;
-  object-fit: cover;
   border-radius: 50%;
   border: 3px solid #0B2B7A;
   background-color: #083AA9;
@@ -178,8 +166,6 @@ select {
   font-size: 12px;
   color: #666;
   font-style: italic;
-  text-align: center;
-  margin-top: 5px;
 }
 
 .toggle-group {
@@ -249,6 +235,9 @@ input:checked + .slider:before {
   transition: all 0.3s ease;
   font-size: 14px;
   min-width: 120px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
 .btn-contact {
@@ -261,6 +250,38 @@ input:checked + .slider:before {
   background: #0629859e;
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(8, 58, 169, 0.3);
+}
+
+.btn-delete {
+  background: #dc3545;
+  color: white;
+  border: 2px solid #dc3545;
+  margin-left: 10px;
+}
+
+.btn-delete:hover {
+  background: #a92835;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+.profile-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.left-section, .right-section {
+  flex: 1;
+  min-width: 280px;
+}
+
+select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #083AA9;
+  border-radius: 8px;
+  font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -293,44 +314,15 @@ input:checked + .slider:before {
     text-align: center;
   }
 }
-/* Botón rojo */
-.btn-delete {
-  background: #dc3545;
-  color: white;
-  border: 2px solid #dc3545;
-  margin-left: 10px;
-}
 
-.btn-delete:hover {
-  background: #a92835;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
-}
-
-/* Sección de switches e idioma */
-.profile-form {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 40px;
-}
-
-.left-section, .right-section {
-  flex: 1;
-  min-width: 280px;
-}
-
-/* Actualiza esta clase si ya existía */
-.toggle-group {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 20px;
-}
-
-/* MODO OSCURO - ESTILO UNIFICADO */
+/* MODO OSCURO - ESTILOS */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
+}
+
+body.dark-mode .container {
+  background-color: #121212;
 }
 
 body.dark-mode .main-content {
@@ -375,8 +367,12 @@ body.dark-mode .info-label {
   color: #90caf9;
 }
 
-body.dark-mode input[type="text"],
-body.dark-mode input[type="email"],
+body.dark-mode .info-value {
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  border-color: #555;
+}
+
 body.dark-mode select {
   background-color: #2a2a2a;
   color: #e0e0e0;
@@ -384,8 +380,12 @@ body.dark-mode select {
 }
 
 body.dark-mode .profile-image {
-  background-color: #333;
+  background-color: #1976d2;
   border-color: #64b5f6;
+}
+
+body.dark-mode .nombre-imagen {
+  color: #aaa;
 }
 
 body.dark-mode .btn-contact {
@@ -408,11 +408,3 @@ body.dark-mode .btn-delete:hover {
   background-color: #8e0000;
   box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
 }
-
-/* Modo oscuro para valores de solo lectura */
-body.dark-mode .info-value {
-  background-color: #2a2a2a;
-  color: #e0e0e0;
-  border-color: #555;
-}
-
