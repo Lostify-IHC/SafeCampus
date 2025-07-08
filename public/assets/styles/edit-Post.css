@@ -143,3 +143,72 @@ select {
     padding: 20px;      
   }
 }
+
+
+body.dark-mode {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1e1e1e;
+}
+
+body.dark-mode .logo {
+  background-color: #1e1e1e;
+  color: #e0e0e0;
+}
+
+body.dark-mode .logo img {
+  filter: brightness(0.9);
+}
+
+body.dark-mode .nav-item {
+  color: #e0e0e0;
+}
+
+body.dark-mode .nav-item.active,
+body.dark-mode .nav-item:hover {
+  background-color: #e0e0e0;
+  color: #121212;
+}
+
+body.dark-mode .formulario {
+  background-color: #121212;
+  color: #e0e0e0;
+}
+
+body.dark-mode .formulario h1,
+body.dark-mode .form-container h2,
+body.dark-mode label {
+  color: #e0e0e0;
+}
+
+body.dark-mode input[type="text"],
+body.dark-mode input[type="email"],
+body.dark-mode input[type="file"],
+body.dark-mode textarea,
+body.dark-mode select {
+  background-color: #1e1e1e;
+  border: 2px solid #444;
+  color: #e0e0e0;
+}
+
+body.dark-mode .submit {
+  background-color: #e0e0e0;
+  color: #121212;
+}
+
+body.dark-mode .submit:hover {
+  background-color: #cccccc;
+}
+
+body.dark-mode .back-button {
+  border: 2px solid #e0e0e0;
+  color: #e0e0e0;
+}
+
+body.dark-mode .back-button:hover {
+  background-color: #e0e0e0;
+  color: #121212;
+}

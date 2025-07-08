@@ -365,3 +365,52 @@ body.dark-mode .nav-item.active {
   font-weight: 600;
   margin: 0;
 }
+
+body.dark-mode .sidebar {
+  background-color: #0d0d0d;
+}
+
+body.dark-mode .nav-item {
+  color: #fff;
+}
+
+body.dark-mode .nav-item:hover {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .nav-item.active {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode .breadcrumb {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+body.dark-mode .info-section {
+  background-color: #1e1e1e;
+  color: #fff;
+}
+
+body.dark-mode .info-label {
+  color: #fff;
+}
+
+body.dark-mode input,
+body.dark-mode select {
+  background-color: #333;
+  color: #fff;
+  border-color: #fff;
+}
+
+body.dark-mode .btn-contact {
+  background-color: #ffffff;
+  color: #083AA9;
+  border-color: #ffffff;
+}
+
+body.dark-mode .btn-contact:hover {
+  background-color: #cccccc;
+}

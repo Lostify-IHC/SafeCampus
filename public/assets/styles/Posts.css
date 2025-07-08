@@ -362,3 +362,62 @@ body {
   /* Esta regla forza al texto a mostrarse como está escrito, sin convertirlo a minúsculas */
   text-transform: none !important; 
 }
+
+body.dark-mode {
+  background-color: #121212;
+  color: #E0E0E0;
+}
+
+body.dark-mode .container,
+body.dark-mode .Main_Content {
+  background-color: #121212;
+}
+
+body.dark-mode .sidebar {
+  background-color: #1E1E1E;
+}
+
+body.dark-mode .logo {
+  background-color: #1E1E1E;
+  color: #ffffff;
+}
+
+body.dark-mode .nav-item {
+  color: #E0E0E0;
+}
+
+body.dark-mode .nav-item:hover,
+body.dark-mode .nav-item.active {
+  background-color: #E0E0E0;
+  color: #1E1E1E;
+}
+
+body.dark-mode .Titulo,
+body.dark-mode .Post_1 p,
+body.dark-mode .Post_2 p,
+body.dark-mode .Post_3 p,
+body.dark-mode .integrante p {
+  color: #FFFFFF;
+}
+
+body.dark-mode .Post_1,
+body.dark-mode .Post_2,
+body.dark-mode .Post_3 {
+  background-color: #1F1F1F;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .Ubicacion {
+  background-color: #2A2A2A;
+  color: #FFFFFF;
+  border-color: #3a3a3a;
+}
+
+body.dark-mode .Detalles_Publicacion {
+  background-color: #4D77FF;
+  border-color: #4D77FF;
+}
+
+body.dark-mode .Detalles_Publicacion a {
+  color: #FFFFFF;
+}
