@@ -90,7 +90,7 @@ function switchSection(section) {
     } else if (section === 'perfil') {
         window.location.href = 'profile.html';
     } else if (section === 'notificaciones') {
-        window.location.href = 'notifications.html';
+        window.location.href = 'notificaciones.html';
     } else if (section === 'otros') {
         window.location.href = 'otros.html';
     }
@@ -137,11 +137,25 @@ function deletePost() {
 }
 
 // Función para editar publicación
+// Función para editar publicación
 function editPost() {
-    console.log('Editando publicación...');
-    alert('Redirigiendo a la página de edición de tu publicación...');
-    // Aquí puedes redirigir a una página de edición
-    window.location.href = 'edit_post.html';
+  // 1. Lee la información del objeto desde localStorage (su script ya hace esto al cargar la página)
+  const publicacionData = localStorage.getItem('publicacionDetalle');
+  
+  if (publicacionData) {
+    const publicacion = JSON.parse(publicacionData);
+    const itemName = publicacion.objeto; // Obtenemos el nombre, ej: "Cartuchera"
+
+    // 2. Si tenemos un nombre, redirigimos a TU página de edición con el parámetro correcto
+    if (itemName) {
+      // Asegúrate que 'edit-Post.html' sea el nombre correcto de TU archivo de edición
+      window.location.href = `edit-Post.html?item=${itemName}`;
+    } else {
+      alert("Error: No se pudo encontrar el nombre del objeto para editar.");
+    }
+  } else {
+    alert("Error: No se encontraron datos para editar.");
+  }
 }
 
 // Función para cerrar sesión

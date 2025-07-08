@@ -357,3 +357,8 @@ body {
     margin-left: 0px;
   }
 }
+
+.Ubicacion {
+  /* Esta regla forza al texto a mostrarse como está escrito, sin convertirlo a minúsculas */
+  text-transform: none !important; 
+}
