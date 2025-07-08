@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mi Perfil - Safe Campus</title>
+  <link rel="stylesheet" href="./assets/styles/perfil_editado.css" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <div class="logo">
+        <img
+          src="assets/images/logo.JPG"
+          alt="Safe Campus Logo"
+        />
+      </div>
+      <a href="Posts.html" class="nav-item">Mis publicaciones</a>
+      <a href="Search.html" class="nav-item">Publicaciones</a>
+      <a href="otros.html" class="nav-item">Otros</a>
+      <a href="perfil_editado.html" class="nav-item active">Mi Perfil</a>
+      <a href="notificaciones.html" class="nav-item">Notificaciones</a>
+      <a href="../index.html" class="nav-item">Cerrar Sesión</a>
+    </div>
+
+    <div class="main-content">
+      <div class="breadcrumb">Mi Perfil</div>
+      <div class="content">
+        <div class="info-section">
+          <div class="profile-image-container">
+            <div class="profile-image">
+              <span id="iniciales-usuario">OM</span>
+            </div>
+            <p class="nombre-imagen" id="nombre-imagen">mifoto.png</p>
+          </div>
+          <form class="profile-form">
+            <div class="left-section">
+              <div class="info-item">
+                <label class="info-label">Nombres</label>
+                <span class="info-value" id="nombres-perfil">Oliver</span>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Apellidos</label>
+                <span class="info-value" id="apellidos-perfil">Martinez</span>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Celular</label>
+                <span class="info-value" id="celular-perfil">+51 927594756</span>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Correo electrónico</label>
+                <span class="info-value" id="correo-perfil">u202415895@upc.edu.pe</span>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Universidad</label>
+                <span class="info-value" id="universidad-perfil">Universidad Peruana de Ciencias Aplicadas</span>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Sede</label>
+                <span class="info-value" id="sede-perfil">San Miguel</span>
+              </div>
+            </div>
+
+            <div class="right-section">
+              <div class="toggle-group">
+                <label class="info-label">Modo Oscuro</label>
+                <label class="switch">
+                  <input type="checkbox" id="dark-mode-toggle" />
+                  <span class="slider"></span>
+                </label>
+              </div>
+              <div class="info-item">
+                <label class="info-label">Idioma</label>
+                <select>
+                  <option>Español</option>
+                  <option>Inglés</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="actions-container">
+              <button type="button" class="action-btn btn-contact">
+                <a href="editar_perfil.html">Editar</a>
+              </button>
+              <button type="button" class="action-btn btn-delete">
+                <a href="../index.html">Eliminar Cuenta</a>
+              </button>
+            </div>
+          </form>
+        </div>    
+      </div>
+    </div>
+  </div>
+
+  <script>
+    //cargar datos
+    function cargarDatosPerfil() {
+      const datosGuardados = localStorage.getItem('perfilUsuario');
+      
+      if (datosGuardados) {
+        const datos = JSON.parse(datosGuardados);
+        
+        document.getElementById('nombres-perfil').textContent = datos.nombres || 'Oliver';
+        document.getElementById('apellidos-perfil').textContent = datos.apellidos || 'Martinez';
+        document.getElementById('celular-perfil').textContent = datos.celular || '+51 927594756';
+        document.getElementById('correo-perfil').textContent = datos.correo || 'u202415895@upc.edu.pe';
+        document.getElementById('universidad-perfil').textContent = datos.universidad || 'Universidad Peruana de Ciencias Aplicadas';
+        document.getElementById('sede-perfil').textContent = datos.sede || 'San Miguel';
+        document.getElementById('nombre-imagen').textContent = datos.imagen || 'mifoto.png';
+        
+        // Actualizar iniciales
+        const iniciales = (datos.nombres?.charAt(0) || 'O') + (datos.apellidos?.charAt(0) || 'M');
+        document.getElementById('iniciales-usuario').textContent = iniciales.toUpperCase();
+      }
+    }
+
+    // Funcionalidad del modo oscuro
+    function initDarkMode() {
+      const darkModeToggle = document.getElementById('dark-mode-toggle');
+      const savedDarkMode = localStorage.getItem('modoOscuro');
+      
+      // Aplicar estado guardado al cargar
+      if (savedDarkMode === 'true') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+      }
+      
+      // Manejar cambios del toggle
+      darkModeToggle.addEventListener('change', function() {
+        if (this.checked) {
+          document.body.classList.add('dark-mode');
+          localStorage.setItem('modoOscuro', 'true');
+        } else {
+          document.body.classList.remove('dark-mode');
+          localStorage.setItem('modoOscuro', 'false');
+        }
+      });
+    }
+
+    // Cargar datos al cargar la página
+    window.addEventListener('load', function() {
+      cargarDatosPerfil();
+      initDarkMode();
+    });
+  </script>
+    
+</body>
+</html>
