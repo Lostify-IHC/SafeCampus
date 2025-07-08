@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editar Publicación - SafeCampus</title>
+  <link rel="stylesheet" href="assets/styles/edit-Post.css"> 
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+          <div class="logo">
+              <img
+                  src="assets/images/logo.JPG"
+                  alt="Safe Campus Logo"
+              />
+          </div>
+          <a href="Posts.html" class="nav-item active">
+              Mis publicaciones
+          </a>
+          <a href="Search.html" class="nav-item">
+              Publicaciones
+          </a>
+          <a href="#" class="nav-item">
+              Otros
+          </a>
+          <a href="profile.html" class="nav-item">
+              Mi Perfil
+          </a>
+          <a href="#" class="nav-item">
+              Notificaciones
+          </a>
+          <a href="../index.html" class="nav-item">
+              Cerrar Sesión
+          </a>
+      </div>
+
+    <main class="formulario">
+      <div class="header">
+        <button class="back-button" onclick="history.back()">←</button>
+        <h1>Mis Publicaciones</h1>
+      </div>
+
+      <div class="form-container">
+        <h2 id="item-title"></h2>
+        
+        <form id="edit-form">
+          <label for="sede">Sede</label>
+          <input type="text" id="sede" name="sede" placeholder="Ej: San Miguel">
+
+          <label for="area">Área</label>
+          <input type="text" id="area" name="area" placeholder="Ej: Salón B405">
+
+          <label for="fecha">Día encontrado</label>
+          <input type="text" id="fecha" name="fecha" placeholder="Ej: 13/04/2025">
+
+          <label for="descripcion_objeto">Descripción objeto</label>
+          <textarea id="descripcion_objeto" name="descripcion_objeto" placeholder="Describe el objeto encontrado..."></textarea>
+
+          <label for="descripcion_hallazgo">Descripción de hallazgo</label>
+          <textarea id="descripcion_hallazgo" name="descripcion_hallazgo" placeholder="Indica dónde se encontró el objeto..."></textarea>
+
+          <label for="estado">Ver estado del objeto</label>
+          <select id="estado" name="estado">
+            <option value="En Objetos Perdidos">En Objetos Perdidos</option>
+            <option value="En mi Posesión">En mi Posesión</option>
+          </select>
+
+          <label for="imagen">Subir Imagen</label>
+          <input type="file" id="imagen" name="imagen">
+
+          <button type="submit" class="submit">Guardar</button>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="assets/scripts/edit-Post.js"></script>
+
+</body>
+</html>
