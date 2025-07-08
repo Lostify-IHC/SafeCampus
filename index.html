@@ -26,11 +26,17 @@
 
         <nav class="navbar">
             <ul>
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#como-funciona" class="nav-link">¿Cómo funciona?</a></li>
-                <li><a href="#caracteristicas" class="nav-link">Características</a></li>
-                <li><a href="#quienes-somos" class="nav-link">¿Quiénes Somos?</a></li>
-                <li><a href="public/login.html" class="btn-acceder">Acceder</a></li>
+                <li><a href="#inicio" class="nav-link" data-i18n="nav.inicio">Inicio</a></li>
+                <li><a href="#como-funciona" class="nav-link" data-i18n="nav.como_funciona">¿Cómo funciona?</a></li>
+                <li><a href="#caracteristicas" class="nav-link" data-i18n="nav.caracteristicas">Características</a></li>
+                <li><a href="#quienes-somos" class="nav-link" data-i18n="nav.quienes_somos">¿Quiénes Somos?</a></li>
+                <li><a href="public/login.html" class="btn-acceder" data-i18n="nav.acceder">Acceder</a></li>
+                <li>
+                        <select id="idioma-selector">
+                            <option value="es">Español</option>
+                            <option value="en">English</option>
+                        </select>
+                </li>
             </ul>
         </nav>
     </div>
@@ -39,10 +45,10 @@
     <section id="inicio" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Perdiste algo, pero no estás solo.</h1>
-                <p>Con SafeCampus, reporta y encuentra tus objetos extraviados en segundos.</p>
-                <p>Rápido. Seguro. Eficiente.</p>
-                <a href="public/register.html" class="btn-empezar">Empieza ahora</a>
+                <h1 data-i18n="hero.titulo">Perdiste algo, pero no estás solo.</h1>
+                <p data-i18n="hero.descripcion1">Con SafeCampus, reporta y encuentra tus objetos extraviados en segundos.</p>
+                <p data-i18n="hero.descripcion2">Rápido. Seguro. Eficiente.</p>
+                <a href="public/register.html" class="btn-empezar" data-i18n="hero.empezar">Empieza ahora</a>
             </div>
             <div class="hero-image">
                 <div class="image-placeholder"><img src="public/assets/images/extras/fotoinicioLandingPage.png" alt="imagenInicio" height="560px" width="640px"></div>
@@ -52,23 +58,23 @@
     <!-- Sección ¿Cómo funciona? -->
     <section id="como-funciona" class="funcionamiento">
         <div class="container">
-            <h2>¿Cómo funciona?</h2>
+            <h2 data-i18n="funciona.titulo">¿Cómo funciona?</h2>
             <div class="pasos">
                 <div class="paso">
                     <div class="numero-circulo">1</div>
-                    <h3>Reporta o busca un objeto</h3>
-                    <p>Accede a la app y completa un breve formulario con una foto, ubicación y descripción del objeto.</p>
+                    <h3 data-i18n="funciona.paso1">Reporta o busca un objeto</h3>
+                    <p data-i18n="funciona.paso1_desc">Accede a la app y completa un breve formulario con una foto, ubicación y descripción del objeto.</p>
                 </div>
                 <div class="paso">
                     <div class="numero-circulo">2</div>
-                    <h3>Encuentra</h3>
-                    <p>Revisa los objetos reportados por otros usuarios.<br>
+                    <h3 data-i18n="funciona.paso2">Encuentra</h3>
+                    <p data-i18n="funciona.paso2_desc">Revisa los objetos reportados por otros usuarios.<br>
                     Si reconoces lo que perdiste, avísalo directamente desde la app y da los detalles para validarlo.</p>
                 </div>
                 <div class="paso">
                     <div class="numero-circulo">3</div>
-                    <h3>Recupera de forma segura</h3>
-                    <p>Una vez validado tu reporte, recibirás instrucciones para recoger tu objeto en el área de objetos perdidos del establecimiento educativo.</p>
+                    <h3 data-i18n="funciona.paso3">Recupera de forma segura</h3>
+                    <p data-i18n="funciona.paso3_desc">Una vez validado tu reporte, recibirás instrucciones para recoger tu objeto en el área de objetos perdidos del establecimiento educativo.</p>
                 </div>
             </div>
         </div>
@@ -76,19 +82,19 @@
     <!-- Sección Características -->
     <section id="caracteristicas" class="caracteristicas">
         <div class="container">
-            <h2>Características</h2>
+            <h2 data-i18n="caracteristicas.titulo">Características</h2>
             <div class="caracteristicas-grid">
                 <div class="caracteristica-card">
-                    <h3>Seguridad</h3>
-                    <p>SafeCampus solo permitirá a los usuarios registrarse con su correo institucional asegurado así su pertenencia a un centro universitario</p>
+                    <h3 data-i18n="caracteristicas.seguridad">Seguridad</h3>
+                    <p data-i18n="caracteristicas.seguridad_desc">SafeCampus solo permitirá a los usuarios registrarse con su correo institucional asegurado así su pertenencia a un centro universitario</p>
                 </div>
                 <div class="caracteristica-card">
-                    <h3>Contacto</h3>
-                    <p>El sistema de SafeCampus al detectar un objeto que cumpla con las características de un objeto reportado como perdido, notificará al usuario de la coincidencia</p>
+                    <h3 data-i18n="caracteristicas.contacto">Contacto</h3>
+                    <p data-i18n="caracteristicas.contacto_desc">El sistema de SafeCampus al detectar un objeto que cumpla con las características de un objeto reportado como perdido, notificará al usuario de la coincidencia</p>
                 </div>
                 <div class="caracteristica-card">
-                    <h3>Busqueda</h3>
-                    <p>El sistema de SafeCampus usará una busqueda mediante filtros y etiquetas para mostrar mejores resultados y detectar de forma más específica los objetos perdidos</p>
+                    <h3 data-i18n="caracteristicas.busqueda">Busqueda</h3>
+                    <p data-i18n="caracteristicas.busqueda_desc">El sistema de SafeCampus usará una busqueda mediante filtros y etiquetas para mostrar mejores resultados y detectar de forma más específica los objetos perdidos</p>
                 </div>
             </div>
         </div>
@@ -96,14 +102,14 @@
     <!-- Sección ¿Quiénes Somos? -->
     <section id="quienes-somos" class="quienes-somos">
         <div class="container">
-            <h2>¿Quiénes Somos?</h2>
+            <h2 data-i18n="quienes.titulo">¿Quiénes Somos?</h2>
             <div class="descripcion">
-                <p>Somos Lostify, una startup comprometida con mejorar la vida universitaria mediante tecnología. Nacimos con la misión de resolver un problema cotidiano: la pérdida de objetos dentro del campus.</p>
-                <p>Nuestro equipo está formado por jóvenes apasionados por la innovación, la seguridad y el bienestar estudiantil. Creemos en el poder de la comunidad y en la tecnología como puente para conectar personas, resolver problemas y fortalecer la solidaridad en los entornos educativos.</p>
-                <p>"Recupera lo que perdiste".</p>
+                <p data-i18n="quienes.desc1">Somos Lostify, una startup comprometida con mejorar la vida universitaria mediante tecnología. Nacimos con la misión de resolver un problema cotidiano: la pérdida de objetos dentro del campus.</p>
+                <p data-i18n="quienes.desc2">Nuestro equipo está formado por jóvenes apasionados por la innovación, la seguridad y el bienestar estudiantil. Creemos en el poder de la comunidad y en la tecnología como puente para conectar personas, resolver problemas y fortalecer la solidaridad en los entornos educativos.</p>
+                <p data-i18n="quienes.desc3">"Recupera lo que perdiste".</p>
             </div>
             
-            <h3 class="integrantes-titulo">Integrantes</h3>
+            <h3 class="integrantes-titulo" data-i18n="quienes.integrantes">Integrantes</h3>
             <div class="integrantes-grid">
                 <!-- Fila 1 -->
                 <div class="integrante">
@@ -144,50 +150,162 @@
             <div class="footer-content">
                 <div class="footer-logo">
                     <img src="public/assets/images/logo.JPG" alt="logo" height="70px" width="200px"/>
-                    <p>"Recupera lo que perdiste".</p>
+                    <p data-i18n="footer.slogan">"Recupera lo que perdiste".</p>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Enlaces de navegacion</h3>
+                    <h3 data-i18n="footer.enlaces">Enlaces de navegacion</h3>
                     <ul>
-                        <li><a href="#inicio">Inicio</a></li>
-                        <li><a href="#como-funciona">¿Como funciona?</a></li>
-                        <li><a href="#caracteristicas">Características</a></li>
-                        <li><a href="#quienes-somos">¿Quiénes Somos?</a></li>
+                        <li><a href="#inicio" data-i18n="footer.inicio">Inicio</a></li>
+                        <li><a href="#como-funciona" data-i18n="footer.como_funciona">¿Como funciona?</a></li>
+                        <li><a href="#caracteristicas" data-i18n="footer.caracteristicas">Características</a></li>
+                        <li><a href="#quienes-somos" data-i18n="footer.quienes_somos">¿Quiénes Somos?</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Contactanos</h3>
+                    <h3 data-i18n="footer.contacto">Contactanos</h3>
                     <ul>
                         <li>contacto@safecampus.app</li>
-                        <li>Lima, Peru</li>
+                        <li data-i18n="footer.lugar">Lima, Peru</li>
                         <li>+51 999 999 999</li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <h3>Legal</h3>
+                    <h3 data-i18n="footer.legal">Legal</h3>
                     <ul>
-                        <li><a href="public/terminos-condiciones.html">Términos y Condiciones</a></li>
+                        <li><a href="public/terminos-condiciones.html" data-i18n="footer.terminos">Términos y Condiciones</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>©2025 Copyright Lostify. Todos los derechos reservados</p>
+                <p data-i18n="footer.copyright">©2025 Copyright Lostify. Todos los derechos reservados</p>
             </div>
         </div>
     </footer>
     
     <script src="public/assets/scripts/main.js"></script>
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const modoOscuro = localStorage.getItem("modoOscuro") === "true";
+  // Traducciones ES/EN
+  const translations = {
+    es: {
+      'nav.inicio': 'Inicio',
+      'nav.como_funciona': '¿Cómo funciona?',
+      'nav.caracteristicas': 'Características',
+      'nav.quienes_somos': '¿Quiénes Somos?',
+      'nav.acceder': 'Acceder',
+      'hero.titulo': 'Perdiste algo, pero no estás solo.',
+      'hero.descripcion1': 'Con SafeCampus, reporta y encuentra tus objetos extraviados en segundos.',
+      'hero.descripcion2': 'Rápido. Seguro. Eficiente.',
+      'hero.empezar': 'Empieza ahora',
+      'funciona.titulo': '¿Cómo funciona?',
+      'funciona.paso1': 'Reporta o busca un objeto',
+      'funciona.paso1_desc': 'Accede a la app y completa un breve formulario con una foto, ubicación y descripción del objeto.',
+      'funciona.paso2': 'Encuentra',
+      'funciona.paso2_desc': 'Revisa los objetos reportados por otros usuarios.<br>Si reconoces lo que perdiste, avísalo directamente desde la app y da los detalles para validarlo.',
+      'funciona.paso3': 'Recupera de forma segura',
+      'funciona.paso3_desc': 'Una vez validado tu reporte, recibirás instrucciones para recoger tu objeto en el área de objetos perdidos del establecimiento educativo.',
+      'caracteristicas.titulo': 'Características',
+      'caracteristicas.seguridad': 'Seguridad',
+      'caracteristicas.seguridad_desc': 'SafeCampus solo permitirá a los usuarios registrarse con su correo institucional asegurado así su pertenencia a un centro universitario',
+      'caracteristicas.contacto': 'Contacto',
+      'caracteristicas.contacto_desc': 'El sistema de SafeCampus al detectar un objeto que cumpla con las características de un objeto reportado como perdido, notificará al usuario de la coincidencia',
+      'caracteristicas.busqueda': 'Busqueda',
+      'caracteristicas.busqueda_desc': 'El sistema de SafeCampus usará una busqueda mediante filtros y etiquetas para mostrar mejores resultados y detectar de forma más específica los objetos perdidos',
+      'quienes.titulo': '¿Quiénes Somos?',
+      'quienes.desc1': 'Somos Lostify, una startup comprometida con mejorar la vida universitaria mediante tecnología. Nacimos con la misión de resolver un problema cotidiano: la pérdida de objetos dentro del campus.',
+      'quienes.desc2': 'Nuestro equipo está formado por jóvenes apasionados por la innovación, la seguridad y el bienestar estudiantil. Creemos en el poder de la comunidad y en la tecnología como puente para conectar personas, resolver problemas y fortalecer la solidaridad en los entornos educativos.',
+      'quienes.desc3': '"Recupera lo que perdiste".',
+      'quienes.integrantes': 'Integrantes',
+      'footer.slogan': '"Recupera lo que perdiste".',
+      'footer.enlaces': 'Enlaces de navegacion',
+      'footer.inicio': 'Inicio',
+      'footer.como_funciona': '¿Como funciona?',
+      'footer.caracteristicas': 'Características',
+      'footer.quienes_somos': '¿Quiénes Somos?',
+      'footer.contacto': 'Contactanos',
+      'footer.lugar': 'Lima, Peru',
+      'footer.legal': 'Legal',
+      'footer.terminos': 'Términos y Condiciones',
+      'footer.copyright': '©2025 Copyright Lostify. Todos los derechos reservados',
+    },
+    en: {
+      'nav.inicio': 'Home',
+      'nav.como_funciona': 'How it works?',
+      'nav.caracteristicas': 'Features',
+      'nav.quienes_somos': 'About Us',
+      'nav.acceder': 'Login',
+      'hero.titulo': 'Lost something? You are not alone.',
+      'hero.descripcion1': 'With SafeCampus, report and find your lost items in seconds.',
+      'hero.descripcion2': 'Fast. Safe. Efficient.',
+      'hero.empezar': 'Start now',
+      'funciona.titulo': 'How it works?',
+      'funciona.paso1': 'Report or search for an item',
+      'funciona.paso1_desc': 'Access the app and fill out a short form with a photo, location, and item description.',
+      'funciona.paso2': 'Find',
+      'funciona.paso2_desc': 'Check items reported by other users.<br>If you recognize what you lost, notify directly from the app and provide details to validate.',
+      'funciona.paso3': 'Recover safely',
+      'funciona.paso3_desc': 'Once your report is validated, you will receive instructions to pick up your item at the lost and found area of the educational institution.',
+      'caracteristicas.titulo': 'Features',
+      'caracteristicas.seguridad': 'Security',
+      'caracteristicas.seguridad_desc': 'SafeCampus will only allow users to register with their institutional email, ensuring their belonging to a university center.',
+      'caracteristicas.contacto': 'Contact',
+      'caracteristicas.contacto_desc': 'SafeCampus will notify the user when an item matches the characteristics of a reported lost item.',
+      'caracteristicas.busqueda': 'Search',
+      'caracteristicas.busqueda_desc': 'SafeCampus will use filters and tags to show better results and more specifically detect lost items.',
+      'quienes.titulo': 'About Us',
+      'quienes.desc1': 'We are Lostify, a startup committed to improving university life through technology. We were born with the mission to solve a daily problem: losing items on campus.',
+      'quienes.desc2': 'Our team is made up of young people passionate about innovation, security, and student well-being. We believe in the power of community and technology as a bridge to connect people, solve problems, and strengthen solidarity in educational environments.',
+      'quienes.desc3': '"Recover what you lost".',
+      'quienes.integrantes': 'Team',
+      'footer.slogan': '"Recover what you lost".',
+      'footer.enlaces': 'Navigation links',
+      'footer.inicio': 'Home',
+      'footer.como_funciona': 'How it works?',
+      'footer.caracteristicas': 'Features',
+      'footer.quienes_somos': 'About Us',
+      'footer.contacto': 'Contact us',
+      'footer.lugar': 'Lima, Peru',
+      'footer.legal': 'Legal',
+      'footer.terminos': 'Terms and Conditions',
+      'footer.copyright': '©2025 Copyright Lostify. All rights reserved',
+    }
+  };
+
+  function translatePage(lang) {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (translations[lang] && translations[lang][key]) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translations[lang][key];
+        } else {
+          // Permitir html (para <br> en descripciones)
+          el.innerHTML = translations[lang][key];
+        }
+      }
+    });
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    // Modo oscuro
+    const modoOscuro = localStorage.getItem('modoOscuro') === 'true';
     if (modoOscuro) {
-      document.body.classList.add("dark-mode");
+      document.body.classList.add('dark-mode');
+    }
+
+    // Traducción inicial
+    const selector = document.getElementById('idioma-selector');
+    let lang = selector ? selector.value : 'es';
+    translatePage(lang);
+
+    if (selector) {
+      selector.addEventListener('change', function() {
+        translatePage(this.value);
+      });
     }
   });
-</script>
+    </script>
 </body>
 </html>
