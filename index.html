@@ -170,6 +170,15 @@
             </div>
         </div>
     </footer>
+    
     <script src="public/assets/scripts/main.js"></script>
+    <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const modoOscuro = localStorage.getItem("modoOscuro") === "true";
+    if (modoOscuro) {
+      document.body.classList.add("dark-mode");
+    }
+  });
+</script>
 </body>
 </html>
