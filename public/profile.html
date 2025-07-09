@@ -73,13 +73,6 @@
                     <span class="slider"></span>
                   </label>
                 </div>
-                <!-- <div class="toggle-group">
-                  <label class="info-label">Notificaciones</label>
-                  <label class="switch">
-                    <input type="checkbox" checked />
-                    <span class="slider"></span>
-                  </label>
-                </div> -->
                 <div class="info-item">
                   <label class="info-label">Idioma</label>
                   <select>
@@ -100,7 +93,7 @@
     </div>
 
     <script>
-      // Cargar datos del perfil desde localStorage o usar valores por defecto
+
       function cargarDatosPerfil() {
         const datosGuardados = localStorage.getItem('perfilUsuario');
         
@@ -115,13 +108,11 @@
           document.getElementById('sede-perfil').textContent = datos.sede || 'San Miguel';
           document.getElementById('nombre-imagen').textContent = datos.imagen || 'mifoto.png';
           
-          // Actualizar iniciales
           const iniciales = (datos.nombres?.charAt(0) || 'O') + (datos.apellidos?.charAt(0) || 'M');
           document.getElementById('iniciales-usuario').textContent = iniciales.toUpperCase();
         }
       }
 
-      // Funcionalidad del modo oscuro
       function initDarkMode() {
         const darkModeToggle = document.getElementById('dark-mode-toggle');
         const savedDarkMode = localStorage.getItem('darkMode') === 'true';
@@ -142,7 +133,6 @@
         });
       }
 
-      // Cargar datos al cargar la página
       window.addEventListener('load', function() {
         cargarDatosPerfil();
         initDarkMode();

@@ -1,4 +1,4 @@
-// Datos de las publicaciones generales (basadas en el HTML de publicaciones)
+
 const publicacionesGeneralesData = {
      1: {
         objeto: 'Cartuchera',
@@ -50,14 +50,13 @@ const publicacionesGeneralesData = {
     }
 };
 
-// Variable para trackear el estado de favoritos
 let isFavorite = false;
 
-// Cargar los datos de la publicación al cargar la página
+
 document.addEventListener('DOMContentLoaded', function() {
     cargarDatosPublicacion();
     
-    // Agregar efectos hover a los botones
+
     document.querySelectorAll('.action-btn').forEach(btn => {
         btn.addEventListener('mouseenter', function() {
             this.style.transform = 'translateY(-2px)';
@@ -71,31 +70,31 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Función para cargar los datos de la publicación desde localStorage
+
 function cargarDatosPublicacion() {
     const publicacionData = localStorage.getItem('publicacionDetalle');
     
     if (publicacionData) {
         const publicacion = JSON.parse(publicacionData);
         
-        // Actualizar el título de la página
+
         document.getElementById('page-title').textContent = publicacion.objeto;
         
-        // Actualizar la información básica
+
         document.getElementById('sede').textContent = publicacion.sede;
         document.getElementById('area').textContent = publicacion.area;
         document.getElementById('fecha').textContent = publicacion.fecha;
         document.getElementById('usuario').textContent = publicacion.usuario;
         
-        // Actualizar las descripciones
+
         document.getElementById('descripcion').textContent = publicacion.descripcion;
         document.getElementById('hallazgo').textContent = publicacion.hallazgo;
         
-        // Actualizar el estado
+
         const statusBtn = document.getElementById('status-btn');
         statusBtn.textContent = publicacion.status;
         
-        // Aplicar clase CSS según el estado
+
         statusBtn.className = 'status-btn';
         if (publicacion.status === 'En Objetos Perdidos') {
             statusBtn.classList.add('perdidos');
@@ -105,7 +104,7 @@ function cargarDatosPublicacion() {
             statusBtn.classList.add('entregado');
         }
         
-        // Mostrar imagen si existe
+
         if (publicacion.imagen) {
             const imagenElement = document.getElementById('objeto-imagen');
             const placeholderText = document.getElementById('placeholder-text');
@@ -114,7 +113,7 @@ function cargarDatosPublicacion() {
             imagenElement.style.display = 'block';
             placeholderText.style.display = 'none';
             
-            // Manejar error de carga de imagen
+
             imagenElement.onerror = function() {
                 this.style.display = 'none';
                 placeholderText.style.display = 'block';
@@ -122,26 +121,26 @@ function cargarDatosPublicacion() {
             };
         }
         
-        // Verificar estado de favoritos
+
         checkFavoriteStatus(publicacion.objeto);
         
-        // Añadir animación
+
         document.querySelector('.content').classList.add('fade-in');
     } else {
-        // Si no hay datos, redirigir a publicaciones
+
         alert('No se encontraron datos de la publicación');
         window.location.href = 'Posts.html';
     }
 }
 
-// Función para verificar si la publicación está en favoritos
+
 function checkFavoriteStatus(objetoNombre) {
     const favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
     isFavorite = favoritos.includes(objetoNombre);
     updateFavoriteButton();
 }
 
-// Función para actualizar el botón de favoritos
+
 function updateFavoriteButton() {
     const favoriteBtn = document.getElementById('favorite-btn');
     const favoriteText = document.getElementById('favorite-text');
@@ -155,12 +154,12 @@ function updateFavoriteButton() {
     }
 }
 
-// Función para regresar a la página anterior
+
 function goBack() {
     window.location.href = 'Search.html';
 }
 
-// Función para cambiar de sección
+
 function switchSection(section) {
     if (section === 'mis-publicaciones') {
         window.location.href = 'Posts.html';
@@ -173,26 +172,24 @@ function switchSection(section) {
     }else if (section === 'otros') {
         window.location.href = 'otros.html';
     }
-    // Agregar más redirecciones según sea necesario
+
     console.log(`Navegando a: ${section}`);
 }
 
-// Función para contactar al dueño
+
 function contactOwner() {
     const publicacionData = localStorage.getItem('publicacionDetalle');
     if (publicacionData) {
         const publicacion = JSON.parse(publicacionData);
         alert(`Contactarás con ${publicacion.usuario} sobre el objeto: ${publicacion.objeto}\n\nEsta funcionalidad te redirigirá al sistema de mensajería interno.`);
         
-        // Aquí puedes implementar la lógica para contactar al usuario
+
         console.log('Iniciando contacto con:', publicacion.usuario);
-        
-        
-        // window.location.href = `chat.html?usuario=${publicacion.usuario}&objeto=${publicacion.objeto}`;
+
     }
 }
 
-// Función para alternar favoritos
+
 function toggleFavorite() {
     const publicacionData = localStorage.getItem('publicacionDetalle');
     if (publicacionData) {
@@ -200,12 +197,12 @@ function toggleFavorite() {
         let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
         
         if (isFavorite) {
-            // Quitar de favoritos
+
             favoritos = favoritos.filter(item => item !== publicacion.objeto);
             isFavorite = false;
             console.log('Quitado de favoritos:', publicacion.objeto);
         } else {
-            // Agregar a favoritos
+
             if (!favoritos.includes(publicacion.objeto)) {
                 favoritos.push(publicacion.objeto);
             }
@@ -213,24 +210,24 @@ function toggleFavorite() {
             console.log('Agregado a favoritos:', publicacion.objeto);
         }
         
-        // Guardar favoritos actualizados
+
         localStorage.setItem('favoritos', JSON.stringify(favoritos));
         updateFavoriteButton();
         
-        // Mostrar confirmación
+
         const action = isFavorite ? 'agregado a' : 'quitado de';
         alert(`${publicacion.objeto} ha sido ${action} tus favoritos.`);
     }
 }
 
-// Función para cerrar sesión
+
 function logout() {
     if (confirm('¿Estás seguro de que quieres cerrar sesión?')) {
         console.log('Cerrando sesión...');
         localStorage.removeItem('publicacionDetalle');
         localStorage.removeItem('favoritos');
         alert('Sesión cerrada');
-        // Redirigir al login
+
         window.location.href = 'index.html';
     }
 }

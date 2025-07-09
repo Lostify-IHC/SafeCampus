@@ -97,7 +97,6 @@
   </div>
 
   <script>
-    //cargar datos
     function cargarDatosPerfil() {
       const datosGuardados = localStorage.getItem('perfilUsuario');
       
@@ -112,24 +111,20 @@
         document.getElementById('sede-perfil').textContent = datos.sede || 'San Miguel';
         document.getElementById('nombre-imagen').textContent = datos.imagen || 'mifoto.png';
         
-        // Actualizar iniciales
         const iniciales = (datos.nombres?.charAt(0) || 'O') + (datos.apellidos?.charAt(0) || 'M');
         document.getElementById('iniciales-usuario').textContent = iniciales.toUpperCase();
       }
     }
 
-    // Funcionalidad del modo oscuro
     function initDarkMode() {
       const darkModeToggle = document.getElementById('dark-mode-toggle');
       const savedDarkMode = localStorage.getItem('modoOscuro');
       
-      // Aplicar estado guardado al cargar
       if (savedDarkMode === 'true') {
         document.body.classList.add('dark-mode');
         darkModeToggle.checked = true;
       }
       
-      // Manejar cambios del toggle
       darkModeToggle.addEventListener('change', function() {
         if (this.checked) {
           document.body.classList.add('dark-mode');
@@ -141,7 +136,6 @@
       });
     }
 
-    // Cargar datos al cargar la página
     window.addEventListener('load', function() {
       cargarDatosPerfil();
       initDarkMode();

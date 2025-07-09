@@ -3,7 +3,7 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*Parametros de todo el texto del diseño*/
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: white;
@@ -16,7 +16,7 @@ body {
 .contenido-editar-perfil {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra el formulario, pero no afecta la flecha */
+  align-items: center; 
   padding: 40px;
   flex-grow: 1;
   background-color: #f9f9f9;
@@ -105,7 +105,7 @@ body {
 
 .caja-flecha-con-texto {
   display: flex;
-  align-items: center; /* Alinea verticalmente la flecha y el texto */
+  align-items: center;
   gap: 12px;
   margin-bottom: 2vw;
   align-self: flex-start;
@@ -173,7 +173,6 @@ body {
   color: #083AA9;
 }
 
-/* Estilos para el modal de confirmación */
 .modal {
   position: fixed;
   z-index: 1000;
@@ -260,7 +259,6 @@ body {
   background-color: #062a7e;
 }
 
-/* MODO OSCURO - ESTILOS */
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -343,7 +341,7 @@ body.dark-mode .caja-flecha-atras:hover {
   color: white;
 }
 
-/* Modal en modo oscuro */
+
 body.dark-mode .modal {
   background-color: rgba(0, 0, 0, 0.7);
 }

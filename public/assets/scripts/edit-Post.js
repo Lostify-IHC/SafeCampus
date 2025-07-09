@@ -1,21 +1,18 @@
-// Este es el código completo para tu archivo: edit-Post.js
+
 
 document.addEventListener('DOMContentLoaded', function() {
   
   const urlParams = new URLSearchParams(window.location.search);
-  const itemName = urlParams.get('item'); // Ej: "Mochila"
+  const itemName = urlParams.get('item');
 
-  // ----------------------------------------------------
-  // Cargar los datos del objeto que se va a editar
-  // ----------------------------------------------------
+
   const titleElement = document.getElementById('item-title');
   if (itemName) {
     titleElement.textContent = itemName;
-    
-    // Carga los datos existentes para rellenar el formulario
+
     const allPostsData = JSON.parse(localStorage.getItem('publicacionesData')) || {};
     
-    // Buscamos el objeto por su nombre dentro de todos los posts
+
     let itemData = null;
     for (const id in allPostsData) {
         if (allPostsData[id].objeto === itemName) {
@@ -34,17 +31,15 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   }
 
-  // ----------------------------------------------------
-  // Guardar los cambios al presionar el botón
-  // ----------------------------------------------------
+
   const form = document.getElementById('edit-form');
   form.addEventListener('submit', function(event) {
     event.preventDefault();
 
-    // Lee toda la "base de datos" de publicaciones
+
     const allPostsData = JSON.parse(localStorage.getItem('publicacionesData')) || {};
 
-    // Busca el ID del objeto que estamos editando
+
     let targetPostId = null;
     for (const id in allPostsData) {
         if (allPostsData[id].objeto === itemName) {
@@ -53,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Si encontramos el objeto, actualizamos sus datos
+ 
     if (targetPostId) {
         allPostsData[targetPostId].sede = document.getElementById('sede').value;
         allPostsData[targetPostId].area = document.getElementById('area').value;
@@ -63,10 +58,10 @@ document.addEventListener('DOMContentLoaded', function() {
         allPostsData[targetPostId].status = document.getElementById('estado').value;
     }
 
-    // Guardamos de vuelta TODA la base de datos actualizada en localStorage
+
     localStorage.setItem('publicacionesData', JSON.stringify(allPostsData));
 
     alert('¡Cambios guardados para ' + itemName + '!');
-    window.location.href = 'Posts.html'; // Redirige a la lista
+    window.location.href = 'Posts.html';
   });
 });

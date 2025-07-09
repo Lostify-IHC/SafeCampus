@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const modoOscuroSwitch = document.querySelectorAll('.switch input')[0];
     const idiomaSelect = document.querySelector('select');
 
-    // Aplicar estado guardado de modo oscuro al cargar
+
     const modoOscuroGuardado = localStorage.getItem('modoOscuro');
     if (modoOscuroGuardado === 'true') {
         document.body.classList.add('dark-mode');
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-    // Funcionalidad cambio de idioma (simulada)
+
     idiomaSelect.addEventListener('change', () => {
         if (idiomaSelect.value === 'Ingles') {
             document.querySelector('.profile-header').innerText = 'My Profile';
@@ -47,10 +47,10 @@ document.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("idioma", idiomaSelect.value);
     });
 
-    // Cargar idioma desde localStorage si deseas en un futuro
+
 });
 
-// Navegación entre secciones
+
 function switchSection(section) {
     if (section === 'mis-publicaciones') {
         window.location.href = 'Posts.html';
@@ -72,7 +72,6 @@ function logout() {
         localStorage.removeItem('publicacionDetalle');
         localStorage.removeItem('favoritos');
         alert('Sesión cerrada');
-        // Redirigir al login
         window.location.href = 'login.html';
     }
 }

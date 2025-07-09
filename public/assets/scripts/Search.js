@@ -1,4 +1,4 @@
-// Datos de las publicaciones para el detalle
+
 const publicacionesData = {
     1: {
         objeto: 'Cartuchera',
@@ -50,7 +50,7 @@ const publicacionesData = {
     }
 };
 
-// Función para ver el detalle de una publicación
+
 function verDetalle(publicacionId) {
     const publicacion = publicacionesData[publicacionId];
     if (publicacion) {

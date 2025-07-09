@@ -391,7 +391,7 @@ body.dark-mode {
   color: #e0e0e0;
 }
 
-/* Sidebar y logo */
+
 body.dark-mode .sidebar {
   background-color: #1f1f1f;
 }
@@ -400,7 +400,7 @@ body.dark-mode .logo {
   color: #ffffff;
 }
 
-/* Navegación */
+
 body.dark-mode .nav-item {
   color: #e0e0e0;
 }
@@ -410,12 +410,10 @@ body.dark-mode .nav-item.active {
   color: #ffffff;
 }
 
-/* Contenido principal */
 body.dark-mode .contenido-gamificacion {
   background-color: #1e1e1e;
 }
 
-/* Flecha y texto */
 body.dark-mode .caja-flecha-atras {
   background: transparent;
   border-color: #ffffff;
@@ -432,7 +430,7 @@ body.dark-mode .titulo-seccion {
   border-color: #555;
 }
 
-/* Panel usuario */
+
 body.dark-mode .panel-usuario {
   background: linear-gradient(135deg, #1e1e1e, #2c2c2c);
   color: #ffffff;
@@ -447,7 +445,7 @@ body.dark-mode .puntos-numero {
   color: #ffd700;
 }
 
-/* Tarjetas blancas */
+
 body.dark-mode .formas-ganar-puntos,
 body.dark-mode .sistema-niveles,
 body.dark-mode .recompensas,
@@ -456,7 +454,7 @@ body.dark-mode .historial-puntos {
   box-shadow: 0 4px 15px rgba(255, 255, 255, 0.05);
 }
 
-/* Actividades y recompensas */
+
 body.dark-mode .actividad-item,
 body.dark-mode .recompensa-item {
   background-color: #2c2c2c;
@@ -471,7 +469,7 @@ body.dark-mode .recompensa-item h4 {
   color: #ffffff;
 }
 
-/* Colores de puntos */
+
 body.dark-mode .puntos-valor {
   color: #2ecc71;
 }
@@ -479,7 +477,7 @@ body.dark-mode .costo-puntos {
   color: #e74c3c;
 }
 
-/* Niveles */
+
 body.dark-mode .nivel-item {
   background-color: #2c2c2c;
   border-color: #444;
@@ -496,7 +494,7 @@ body.dark-mode .nivel-badge {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Recompensas */
+
 body.dark-mode .recompensa-item.disponible {
   border-color: #27ae60;
 }
@@ -504,7 +502,7 @@ body.dark-mode .recompensa-item.no-disponible {
   border-color: #555;
 }
 
-/* Botones */
+
 body.dark-mode .btn-canjear {
   background: #2ecc71;
 }
@@ -516,7 +514,7 @@ body.dark-mode .btn-bloqueado {
   color: #ccc;
 }
 
-/* Historial */
+
 body.dark-mode .historial-item {
   background: #2c2c2c;
 }

@@ -3,21 +3,21 @@
   padding: 0;
   box-sizing: border-box;
 }
-/*Parametros de todo el texto del diseño*/
+
 body {
   font-family: 'Montserrat', sans-serif;
   background: white;
   min-height: 100vh;
   display: flex;
 }
-/*Parametros del diseño del contenido de la seccion*/
+
 .container {
   display: flex;
   width: 100%;
   height: 100vh;
   background: white;
 }
-/*Parametros de la barra lateral azul*/
+
 .sidebar {
   height: 100%;
   width: 290px;
@@ -69,7 +69,7 @@ body {
   background-color: #fff;
   color: #083AA9;
 }
-/*Espacio del contenido*/
+
 .Main_Content{
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ body {
     margin: 30px;
     gap: 20px;
 }
-/*Titulo de la seccion*/
+
 .Titulo{
     margin-left: 20px;
     color: #083AA9;
@@ -170,7 +170,7 @@ body {
 .Circulo.activa {
     background-color: #083AA9;
 }
-/*Separacion de pares de publicaciones*/
+
 .Row_1{
     display: flex;
     flex-wrap: wrap;
@@ -191,7 +191,7 @@ body {
 .estrella.activa {
     color: #083AA9; 
 }
-/*Primer Post*/
+
 .Post_1{
     background-color: #e7f1fd;
     margin-left: 10px;
@@ -209,7 +209,7 @@ body {
     font-size: 17px;
     line-height: 1.5;
 }
-/*Segundo Post*/
+
 .Post_2{
     background-color: #e7f1fd;
     border-color: #8090cd;
@@ -226,7 +226,7 @@ body {
     line-height: 1.5;
 }
 
-/*Separacion de pares de publicaciones*/
+
 .Row_2{
     display: flex;
     margin-top: 30px;
@@ -234,7 +234,7 @@ body {
     gap: 50px;
     margin-left: 50px;
 }
-/*Tercer Post*/
+
 .Post_3{
     background-color: #e7f1fd;
     margin-left: 10px;
@@ -252,7 +252,7 @@ body {
     font-size: 17px;
     line-height: 1.5;
 }
-/*Cuarto Post*/
+
 .Post_4{
     background-color: #e7f1fd;
     border-color: #8090cd;
@@ -268,7 +268,7 @@ body {
     font-size: 17px;
     line-height: 1.5;
 }
-/*Carectiriscas compartidas de los Posts*/
+
 .Caracteristica{
     font-weight: bold;
 }
@@ -315,7 +315,7 @@ body {
     border-radius: 3px;
     border-width: 2px;
 }
-/*Diseño responsive*/
+
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;

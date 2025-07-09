@@ -1,4 +1,4 @@
-// Navegación entre secciones
+
 function switchSection(section) {
     if (section === 'mis-publicaciones') {
         window.location.href = 'Posts.html';
@@ -19,7 +19,6 @@ function logout() {
         console.log('Cerrando sesión...');
         localStorage.removeItem('publicacionDetalle');
         alert('Sesión cerrada');
-        // Redirigir al login
         window.location.href = 'login.html';
     }
 }

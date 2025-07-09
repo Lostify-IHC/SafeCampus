@@ -139,7 +139,6 @@ select {
   font-size: 14px;
 }
 
-/* Estilos para valores de solo lectura */
 .info-value {
   width: 100%;
   padding: 10px;
@@ -293,7 +292,7 @@ input:checked + .slider:before {
     text-align: center;
   }
 }
-/* Botón rojo */
+
 .btn-delete {
   background: #dc3545;
   color: white;
@@ -307,7 +306,7 @@ input:checked + .slider:before {
   box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
 }
 
-/* Sección de switches e idioma */
+
 .profile-form {
   display: flex;
   flex-wrap: wrap;
@@ -319,7 +318,7 @@ input:checked + .slider:before {
   min-width: 280px;
 }
 
-/* Actualiza esta clase si ya existía */
+
 .toggle-group {
   display: flex;
   align-items: center;
@@ -327,7 +326,7 @@ input:checked + .slider:before {
   margin-bottom: 20px;
 }
 
-/* MODO OSCURO - ESTILO UNIFICADO */
+
 body.dark-mode {
   background-color: #121212;
   color: #e0e0e0;
@@ -409,7 +408,7 @@ body.dark-mode .btn-delete:hover {
   box-shadow: 0 4px 12px rgba(198, 40, 40, 0.3);
 }
 
-/* Modo oscuro para valores de solo lectura */
+
 body.dark-mode .info-value {
   background-color: #2a2a2a;
   color: #e0e0e0;

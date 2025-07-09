@@ -18,7 +18,7 @@ body {
     background: white;
 }
 
-/* Estilos de barra lateral replicados desde publicaciones.css */
+
 .sidebar {
     height: 100%;
     width: 290px;
@@ -318,7 +318,7 @@ body {
     }
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
